@@ -1,0 +1,75 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>About Us</title>
+      <style>
+		nav div img{
+			width: 100%;
+			height: 300px;
+		}
+		.about td img{
+			height: 700px;
+			width: 1000px;
+			
+    		background-color: rgba(0, 0, 0, 0.5);
+   			padding: 10px;
+    		bottom: 0;
+    		left: 0;
+    		box-sizing: border-box;
+    		color: #fff;
+    		margin: 0;
+		}
+		.about .Font{
+			font-size: 18px;
+            color: white;
+		}
+		</style>
+    </head>
+
+    <body>
+    
+        <div style="display: none">
+          <img src="{% static 'emotions.png' %}" />
+        </div><br />
+        <center>
+          <h2 style="color: white">Best Ad Film Makers and Brand Promotion Agency in India</h2>
+        </center>
+      
+      <section>
+        <table class="about">
+          <tr>
+            <td>
+              <img src="https://poojamoviecreations.com/images/what/5.jpg" alt="img not found" />
+            </td>
+            <td class="Font">
+              <b>Pooja Movie Creations</b> is a well-known & significant group of companies since 2008, under this group 16 companies actively working. Group consists of Two Indian Partners belongs to Media industry. Pooja Movie Creations is responsible for Movies, Ad Films, Production House , Trading, Investment, Barter Media , Consultants , Constructions, Broadcast , interior Uncle.com Application, Automobiles, FMCG etc. We are proud to say that Management of each division & work, we have a separate team.
+              <h3>No-1 Video Production Advertising Agency Services</h3>
+              <p>
+                Pooja Movie Creation a name you can trust, India's most promising biggest <b>Ad Film Makers & TV Broadcast Company</b>. Our Film Production Company located in the heart of Noida. We are glad that we have been successfully completed 14 years. We are the complete solution for developing a brand to top brand. We have exclusive analysis/ research team to plan strategies for promotions. We always design concepts which leave mark on clients target audience.
+              </p>
+              <h3>These are the Services offer by Pooja Movie Creations-</h3>
+              <p>
+                <ul>
+                  <li>Video Production (All types video)</li>
+                  <li>Brand Promotion</li>
+                  <li>Celebrity Endorsement</li>
+                  <li>Ad Film Production</li>
+                  <li>Advertising Firm</li>
+                  <li>TV Ad Maker</li>
+                  <li>Short Films</li>
+                  <li>Ad Films and Many More Services</li>
+                </ul>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </body>
+  </html>
+{% endblock %}
+

@@ -1,0 +1,263 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #08044cff;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4961b9, #46a97d);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+
+
+
+    .main{
+      margin-top: 30px;
+    }
+    .main .m1{
+      margin-left: 20px;
+      width: 40%;
+      display: inline-block;
+    }
+
+    .main .m1 .p1{
+      color: #baf21a;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .main .m1 .p2{
+      color: white;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    .main .m2{
+      display: inline-block;
+      background-color: #37566cdb;
+      width: 55%;
+      height: auto;
+      
+    }
+    .main .m2 img{
+      display: flex;
+    }
+    .main .m2 .img1{
+      margin-left: 20px;
+      height: 100px;
+      width: 190px;
+      border-radius: 20px;
+    }
+    .main .m2 .img2{
+      margin-left: 220px;
+      height: 150px;
+      width: 240px;
+      border-radius: 20px;
+    }
+    .main .m2 .img31{
+      margin-left: 20px;
+      height: 125px;
+      width: 255px;
+      border-radius: 20px;
+    }
+    .main .m2 .img32{
+      margin-left: 300px;
+      height: 125px;
+      width: 200px;
+      border-radius: 20px;
+    }
+
+
+ .select{
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  margin-left: 90px;
+ }
+ .select .M{
+    margin: 15px;
+    height: 400px;
+    width: 400px;
+    margin: 15px;
+    background: #006effff;
+    border-radius: 5px;
+ }
+  .select .M h3{
+    text-align: center;
+  }
+ .select .M:hover{
+  transition: ease 2sec;
+  box-shadow: 10px 10px 5px 12px lightblue;
+ }
+ 
+
+
+
+
+.features {
+    
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .feature {
+      background: #2db3d8ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .feature:hover{
+      background-color: #00f7ffff;
+      color: darkred;
+    }
+    .feature a{
+        text-decoration: none;
+    }
+
+    .feature h3 {
+      color: #fffc00;
+      margin-bottom: 10px;
+    }
+
+    
+
+
+
+    .btn {
+      background-color: #352d60ff;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ccd54fff;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+    <header>
+    <h1>📻 Radio Advertising</h1>
+    <p>Boost your brand with the power of radio - reach millions of listeners instantly!</p>
+  </header>
+  
+
+
+  <div class="main">
+    <div class="m1"><P class="p1">THE PODCAST</P>
+      <P class="p2">STORY<br> EVERYONE<br> FOR YOUR</P>
+      <p style="color: white;"> "Radio advertising is a powerful marketing tool that connects brands with millions of listeners. Through catchy jingles and impactful messages, it helps build trust and audience engagement." </p>
+    </div>
+
+
+    <hr style="width: 0px; height: 375px; transform: rotate(0deg); display: inline-block;">
+
+
+    <div class="m2">
+      <img src="{% static 'uploads/services/music1.jfif' %}" class="img1">
+      <img src="{% static 'uploads/services/srvc1.jpg' %}" class="img2">
+            <div style="display: flex;">
+               <img src="{% static 'uploads/services/whitesoundwave.png' %}" class="img31">
+               <img src="{% static 'uploads/services/music2.jpg' %}" class="img32">
+            </div>
+    </div>
+
+<!--
+    <div class="m3">
+      Pooja movie creations
+    </div> -->
+
+  </div>
+  <hr>
+
+
+  <div class="select">
+    
+    <div class="im1 M">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" height="300px" width="400px">
+      <h3>Creative Radio Ads</h3>
+      <p style="color: white; display: flex;">Engage your audience with catchy jingles<br> and impactful storytelling that leaves a lasting impression. </p>
+    </div>
+
+    <div class="im2 M"><img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2" height="300px" width="400px">
+        <h3>Wider Reach</h3>
+    <p style="color: white; display: flex;"> Radio connects with millions daily, making it one of the most trusted and cost-effective mediums for advertising.</p></div>
+
+    <div class="im3 M"><img src="https://static.vecteezy.com/system/resources/thumbnails/029/504/020/small_2x/a-crowd-backdrop-featuring-excitement-generative-ai-photo.jpeg" height="300px" width="400px">
+        <h3>Targeted Audience</h3>
+      <p style="color: white; display: flex;"> Advertise based on region, language, and<br> listener interest to get the maximum impact for your brand. </p></div>
+
+  </div>
+
+
+
+
+<br><br><br>
+
+<center>
+      <button class="btn"><a href="{% url 'contact' %}" style="color:white; text-decoration:none;">Get Started</a></button>
+    </center>
+
+
+  <section class="features">
+    <div class="feature">
+    <a href="#">  <h3>Massive Audience</h3></a>
+      <p>Reach millions of radio listeners nationwide with strategic placements.</p>
+    </div>
+    <div class="feature">
+     <a href="#"> <h3>Cost-Effective</h3></a>
+      <p>Radio ads are budget-friendly with high return on investment.</p>
+    </div>
+    <div class="feature">
+    <a href="#"> <h3>Voice Branding</h3></a>
+      <p>Create memorable jingles and messages that stick in your audience's mind.</p>
+    </div>
+  </section>
+
+</body>
+</html>
+{% endblock %}

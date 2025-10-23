@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Pooja Movies Creations{% endblock %}</title>
+  <link rel="icon" type="image/icon" href="{% static 'logo5remove.png' %}">
+  <style>
+      /* Floating WhatsApp Icon */
+      .whatsapp-float {
+          position: fixed;
+          top: 50%;
+          right: 20px;
+          background-color: #25d366;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+          cursor: pointer;
+          animation: blink 1s infinite;
+          z-index: 9999;
+      }
+      .whatsapp-float img {
+          width: 35px;
+          height: 35px;
+      }
+      @keyframes blink {
+          0%   { opacity: 1; }
+          50%  { opacity: 0.5; }
+          100% { opacity: 1; }
+      }
+  </style>
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    {% include "header_footer.html" %}
+
+    <!-- Page Content -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Include Footer -->
+     {% include "footer.html" %}
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919718422841" target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</body>
+</html>

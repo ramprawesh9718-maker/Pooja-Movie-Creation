@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Creation Footer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+    }
+
+
+    footer {
+      background: #111;
+      padding: 60px 20px 30px;
+      color: #ddd;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-box h3 {
+      margin-bottom: 15px;
+      color: #ffcc00;
+      font-size: 22px;
+      position: relative;
+    }
+
+    .footer-box h3::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #ffcc00;
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    .footer-box p,
+    .footer-box a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1.9;
+      transition: 0.3s;
+    }
+
+    .footer-box a:hover {
+      color: #ffcc00;
+      background-color: white;
+      padding-left: 5px;
+    }
+
+    /* Social Icons Row */
+    .social-row {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .social-row a {
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 25px;
+      color: #bbb;
+      transition: 0.3s;
+    }
+
+    .social-row a:hover {
+      color: #ffcc00;
+      transform: scale(1.9);
+    }
+
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    @media(max-width:768){
+      .footer-container{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+
+      }
+    }
+  </style>
+
+  <!-- Font Awesome Latest -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- More Links -->
+      <div class="footer-box">
+        <h3>More Links</h3>
+        <p><a href="{% url 'team' %}">About Us</a></p>
+        <p><a href="{% url 'about' %}">Our Mission</a></p>
+        <p><a href="{% url 'award' %}">Award</a></p>
+        <p><a href="{% url 'gallery' %}">Gallery</a></p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <p><a href="{% url 'nav' %}">Home</a></p>
+        <p><a href="{% url 'ourclient' %}">Ourclient</a></p>
+        <p><a href="{% url 'service' %}">Services</a></p>
+        <p><a href="{% url 'contact' %}">Contact</a></p>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="footer-box">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i><a href="mailto:ramprawesh9718@gmail.com" style="text-decoration:none"> info@poojamoviecreation.com</a></p>
+        <p><i class="fas fa-phone"></i><a href="tel:+8799746544" style="text-decoration:none"> +91 8799746544</a></p>
+        <p><i class="fab fa-whatsapp"></i><a href="tel:+8076151724" style="text-decoration:none"> +91 8076151724</a></p>
+        <p><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/vm6Y7VwsCG4Fk42F6" target="_blank"> Noida sec:63, India</a></p>
+      </div>
+
+    </div>
+
+    <!-- Social Media Icons Row -->
+    <div class="social-row">
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      &copy; 2025 Pooja Movie Creation. All Rights Reserved | Designed with ❤️
+    </div>
+  </footer>
+
+</body>
+</html>

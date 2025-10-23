@@ -1,0 +1,349 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barter Media Advertising</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+  body{
+    background: linear-gradient(135deg,#0d47a1,#002171);
+    color:#fff;
+    overflow-x:hidden;
+  }
+
+  a{text-decoration:none;}
+
+  /* HERO SECTION */
+  .hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:url('https://www.italiaonline.it/risorse/wp-content/uploads/sites/12/2024/05/barter.jpeg') center/cover no-repeat;
+    background-attachment: fixed;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,50,0.6);
+  }
+  .hero-content{
+    position:relative;
+    z-index:1;
+    max-width:900px;
+  }
+  .hero-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
+  }
+  .hero-content p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+    color:#d0d9ff;
+  }
+  .btn-group{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    padding:12px 28px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+  }
+  .btn-primary{
+    background:#00bcd4;
+    color:#fff;
+  }
+  .btn-primary:hover{background:#0097a7;}
+  .btn-outline{
+    border:2px solid #fff;
+    background:transparent;
+    color:#fff;
+  }
+  .btn-outline:hover{
+    background:#fff;color:#002171;
+  }
+
+  @keyframes bounce{
+    0%,100%{transform:translateX(-50%) translateY(0);}
+    50%{transform:translateX(-50%) translateY(-15px);}
+  }
+
+  /* SECTION STYLING */
+  section{
+    padding:80px 8%;
+    max-width:1400px;
+    margin:auto;
+  }
+  section h2{
+    text-align:center;
+    margin-bottom:15px;
+    font-size:2.6rem;
+  }
+  section p.lead{
+    text-align:center;
+    font-size:1.1rem;
+    margin-bottom:50px;
+    color:#d0d9ff;
+  }
+
+  /* SERVICES SECTION */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+  }
+  .service{
+    background:rgba(255,255,255,0.1);
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.4s;
+  }
+  .service:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  }
+  .service img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  .service h3{margin:15px;font-size:1.4rem;}
+  .service p{margin:0 15px 20px;color:#e3f2fd;}
+
+  /* PACKAGES SECTION */
+  .packages{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+  }
+  .package{
+    background:rgba(255,255,255,0.1);
+    border-radius:12px;
+    padding:20px;
+    transition:0.3s;
+  }
+  .package:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+  }
+  .package h3{font-size:1.5rem;margin-bottom:15px;}
+  .package ul{list-style:none;}
+  .package ul li{margin-bottom:10px;color:#e3f2fd;}
+
+  /* FEATURES SECTION */
+  .features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+  }
+  .feature{
+    background:rgba(255,255,255,0.1);
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+  }
+  .feature img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:15px;
+  }
+  .feature h3{margin-bottom:10px;font-size:1.3rem;}
+  .feature p{color:#e3f2fd;}
+
+  /* CONTACT SECTION */
+  .contact{text-align:center;}
+  .contact a{
+    display:inline-block;
+    padding:12px 30px;
+    background:#00bcd4;
+    color:#fff;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s;
+    margin-top:20px;
+  }
+  .contact a:hover{background:#0097a7;}
+
+  /* REVEAL ANIMATION */
+  .reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
+  }
+  .reveal.active{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media(max-width:768px){
+    .hero-content h1{font-size:2.2rem;}
+    .hero-content p{font-size:1rem;}
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Barter Media Advertising</h1>
+    <p>Transform your media inventory into impactful marketing campaigns with our barter solutions.</p>
+    <div class="btn-group">
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Contact Us</a>
+      <a href="#services" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="reveal">Our Services</h2>
+  <p class="lead reveal">We provide diverse advertising services to maximize your brand's reach through barter.</p>
+  <div class="services">
+    <div class="service reveal">
+      <img src="https://www.famekeeda.com/blogs/content/images/2025/02/1740133273136.webp" alt="Barter Advertising">
+      <h3>Barter Advertising Strategy</h3>
+      <p>Plan effective barter campaigns to maximize exposure without cash constraints.</p>
+    </div>
+    <div class="service reveal">
+      <img src="https://www.brilliantagency.co.uk/wp-content/uploads/2021/10/MIGHTY-OUT-OF-HOME-41.jpeg" alt="Mall Branding">
+      <h3>OOH & Mall Branding</h3>
+      <p>High-visibility mall and outdoor campaigns to reach massive audiences.</p>
+    </div>
+    <div class="service reveal">
+      <img src="https://thumbs.dreamstime.com/b/digital-advertising-social-media-strategy-website-traffic-growth-flat-design-vector-illustration-364207789.jpg" alt="Digital Swaps">
+      <h3>Digital Media Swaps</h3>
+      <p>Exchange ads across digital platforms to expand reach efficiently.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+
+<!-- PACKAGES -->
+<section>
+  <h2 class="reveal">Our Packages</h2>
+  <p class="lead reveal">Choose the package that fits your marketing goals and budget.</p>
+  <div class="packages">
+    <!-- Starter Package -->
+    <div class="package reveal" style="border:2px solid #00bcd4;">
+      <h3>Starter Package</h3>
+      <p style="font-size:1.4rem;font-weight:bold;color:#00bcd4;">$499</p>
+      <ul>
+        <li>Barter consultation</li>
+        <li>1 digital swap</li>
+        <li>Basic analytics report</li>
+        <li>Email support</li>
+      </ul>
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <!-- Professional Package (Most Popular) -->
+    <div class="package reveal" style="border:3px solid #ff9800; background:rgba(255,152,0,0.1);">
+      <h3>Professional Package</h3>
+      <p style="font-size:1.5rem;font-weight:bold;color:#ff9800;">$999</p>
+      <ul>
+        <li>Full barter strategy</li>
+        <li>3 digital & 2 OOH swaps</li>
+        <li>Advanced analytics & report</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Get Started</a>
+      <p style="margin-top:10px;font-weight:bold;color:#ff9800;">Most Popular</p>
+    </div>
+
+    <!-- Enterprise Package -->
+    <div class="package reveal" style="border:2px solid #00bcd4;">
+      <h3>Enterprise Package</h3>
+      <p style="font-size:1.4rem;font-weight:bold;color:#00bcd4;">$1999</p>
+      <ul>
+        <li>Custom barter campaigns</li>
+        <li>Unlimited swaps across channels</li>
+        <li>Full reporting & optimization</li>
+        <li>Dedicated account manager</li>
+      </ul>
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <h2 class="reveal">Why Barter Media?</h2>
+  <p class="lead reveal">Our unique features set us apart from conventional advertising solutions.</p>
+  <div class="features">
+    <div class="feature reveal">
+      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop" alt="Analytics">
+      <h3>Analytics Driven</h3>
+      <p>Track and optimize barter campaigns with detailed reporting.</p>
+    </div>
+    <div class="feature reveal">
+      <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1600&auto=format&fit=crop" alt="Partner Matchmaking">
+      <h3>Partner Matchmaking</h3>
+      <p>Connect brands and media partners for mutually beneficial campaigns.</p>
+    </div>
+    <div class="feature reveal">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop" alt="Strategy">
+      <h3>Custom Strategies</h3>
+      <p>Tailored barter campaigns to meet your unique marketing goals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2 class="reveal">Get Started</h2>
+  <p class="lead reveal">Ready to turn your media inventory into valuable marketing campaigns?</p>
+  <a href="{% url 'contact' %}" class="reveal">Contact Us</a>
+</section>
+
+<script>
+  // Reveal animation
+  const reveals = document.querySelectorAll('.reveal');
+  function revealOnScroll(){
+    for(let i=0;i<reveals.length;i++){
+      const windowHeight = window.innerHeight;
+      const revealTop = reveals[i].getBoundingClientRect().top;
+      const revealPoint = 150;
+      if(revealTop < windowHeight - revealPoint){
+        reveals[i].classList.add('active');
+      }
+    }
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+  // Hero parallax
+  const hero = document.querySelector('.hero');
+  window.addEventListener('scroll', ()=>{
+    const offset = window.pageYOffset;
+    hero.style.backgroundPositionY = offset * 0.5 + "px";
+  });
+
+  // Scroll down arrow click
+  document.querySelector('.scroll-down').addEventListener('click', ()=>{
+    document.querySelector('#services').scrollIntoView({behavior:'smooth'});
+  });
+</script>
+
+</body>
+</html>
+{% endblock %}

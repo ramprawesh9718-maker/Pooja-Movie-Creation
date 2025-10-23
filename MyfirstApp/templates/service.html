@@ -1,0 +1,532 @@
+{% extends "whatsApp.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/service.css' %}" />
+</head>
+
+
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>We provide creative, strategic and impactful advertising solutions that grow your brand visibility and
+        influence.</p>
+    </div>
+  </section>
+
+  <center>
+    <div class="avertising">
+      <h2>ADVERTISING SERVICES</h2>
+    </div>
+  </center>
+
+  <div class="box">
+    <div class="box1">
+      <div class="telivision">
+        <p>Television Promotion & Advertising</p>
+      </div>
+      <p class="parag">Integration Branding , Film Branding and Promotion, News Channels Ads Branding, Serials Branding
+        , Realty Shows Promotion &telecast , Promo Telecast, Newsongs Promotion & Telecast</p>
+    </div>
+
+    <div class="box2 boxes">
+      <!-- <div class="desing"> -->
+      <img src="{% static 'uploads/Serviceadvrtise/radio.png' %}" height="40px" width="40px" />
+      <h4>Radio Promotion and Recovery</h4>
+      <p class="prag">Radio Jingle Branding, R.j Mention Special Best Wishes, Show Sponsorship</p>
+      <!-- </div> -->
+    </div>
+    <div class="box2 boxes">
+      <img src="{% static 'uploads/Serviceadvrtise/airport2.png' %}" height="40px" width="40px" />
+      <h4>Airport Promotion Advertising</h4>
+      <p class="prag">Display Screens Brandings , Trolleys Brandings , Luggage Display Brandings , Security Check
+        Brandings, Security Check Tray Branding.</p>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box2 boxes">
+      <img src="{% static 'uploads/Serviceadvrtise/train.png' %}" height="40px" width="40px" />
+      <h4>Metro Advertising</h4>
+      <p class="prag">Metro Rapping Outer Branding , Metro Handles , Metro Panels Brandings.</p>
+    </div>
+
+    <div class="box2 boxes">
+      <img src="{% static 'uploads/Serviceadvrtise/pvr.png' %}" height="80px" width="80px" />
+      <h4>Pvr Cinemas Advertising</h4>
+      <p class="prag">Tiket Counters Brandings , Movie Theathre Brandings , Movie Theatre Screen Advt Branding</p>
+    </div>
+
+    <div class="box2 boxes">
+      <img src="{% static 'uploads/Serviceadvrtise/outdoor.png' %}" height="60px" width="60px" />
+      <h4>Outdoors Advertising</h4>
+      <p class="prag">Hoardings Pan India Branding</p>
+    </div>
+  </div>
+
+
+
+
+  <div class="m1">
+    <div class="third">
+      <button class="bttn1">How we do</button>
+
+      <p style="margin-left: 40%; font-size: 20px; font-weight: bold;">Marketing and media service</p>
+      <br>
+    </div>
+
+    <div class="multi">
+      <div class="child">
+        <div class="image imgA" style="background-color: #342a3fff;">
+          <a href="{% url 'radio' %}"><img src="{% static 'uploads/Serviceadvrtise/radio.png' %}" />
+            <p>RADIO</p>
+          </a>
+        </div>
+        <div class="image imgB" style="background-color: #906e78a5;">
+          <a href="{% url 'printmedia' %}"><img src="{% static 'uploads/Serviceadvrtise/PrintMedia.png' %}" />
+            <P>PRINT MEDIA</P>
+          </a>
+        </div>
+        <div class="image imgC" style="background-color: #736d4fff;">
+          <a href="{% url 'metro' %}"><img src="{% static 'uploads/Serviceadvrtise/train.png' %}" />
+            <p>METRO BRANDING</p>
+          </a>
+        </div>
+        <div class="image imgD" style="background-color: #492a49ff;">
+          <a href="{% url 'airport' %}"><img src="{% static 'uploads/Serviceadvrtise/airport2.png' %}" />
+            <p>AIRPORT BRANDING</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="child">
+        <div class="image imgE" style="background-color: #15371883;">
+          <a href="{% url 'pvr' %}"><img src="{% static 'uploads/Serviceadvrtise/pvr.png' %}" />
+            <p>PVR CINEMA</p>
+          </a>
+        </div>
+        <div class="image imgF" style="background-color: #b0dbae75;">
+          <a href="{% url 'outdoor' %}"><img src="{% static 'uploads/Serviceadvrtise/outdoor.png' %}" />
+            <p>OUTDOOR MEDIA</p>
+          </a>
+        </div>
+        <div class="image imgG" style="background-color: #9be8bfff;">
+          <a href="{% url 'car' %}"><img src="{% static 'uploads/Serviceadvrtise/carBrand.png' %}" />
+            <p>CAR BRANDING</p>
+          </a>
+        </div>
+        <div class="image imgH" style="background-color: #264137ff;">
+          <a href="{% url 'socialmedia' %}"><img src="{% static 'uploads/Serviceadvrtise/sicialMedia.png' %}" />
+            <p>SOCIAL MEDIA BRANDING</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="child">
+        <div class="image imgI" style="background-color: #c3cbe1ff;">
+          <a href="{% url 'mallbranding' %}"><img src="{% static 'uploads/Serviceadvrtise/mallbrand.png' %}" />
+            <p>MALLS BRANDING</p>
+          </a>
+        </div>
+        <div class="image imgJ" style="background-color: #5c6492ff;">
+          <a href="{% url 'ipl' %}"><img src="{% static 'uploads/Serviceadvrtise/ipl.png' %}" />
+            <p>IPL</p>
+          </a>
+        </div>
+        <div class="image imgK" style="background-color: #74b9f3ff;">
+          <a href="{% url 'bartermedia' %}"><img src="{% static 'uploads/Serviceadvrtise/bartermedia.png' %}" />
+            <p>BARTER MEDIA</p>
+          </a>
+        </div>
+        <div class="image imgL" style="background-color: #342b42ff;">
+          <a href="{% url 'tv' %}"><img src="{% static 'uploads/Serviceadvrtise/televisionmedia.png' %}" />
+            <p>TELEVISION MEDIA</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section>
+    <div>
+      <center>
+        <div class="avertising">
+          <h2>HOT DEAL PACKAGES</h2>
+        </div>
+      </center><br>
+      <center>
+        <div style="display:flex; background-color:#7b8aabfc;text-align: center; align-items: center;" class="hotdeals">
+
+          <div class="hotdeal">
+            <img src="{% static 'uploads/portfolio/crorepati.jpeg' %}" height="300" , width="280" draggable="false">
+            <h4>Kaun Banega Krorepati</h4>
+          </div>
+          <div class="hotdeal">
+            <img src="https://www.themoviedb.org/t/p/original/cVyQCj3ApAe1GvCYoLkG55mNyjm.jpg" height="300" ,
+              width="280" draggable="false">
+            <h4>Kapil Sharma Show</h4>
+          </div>
+          <div class="hotdeal">
+            <img src="https://wallpaperaccess.com/full/5669858.jpg" height="300" , width="280" draggable="false">
+            <h5>Tarak Mehta Ka Ooltah Chashma</h5>
+          </div>
+          <div class="hotdeal">
+            <img
+              src="https://www.tvtime.com/_next/image?url=https:%2F%2Fartworks.thetvdb.com%2Fbanners%2Fposters%2F305506-1.jpg&w=640&q=75"
+              height="300" , width="280" draggable="false">
+            <h4>Bhabhi ji Ghar per hai</h4>
+          </div>
+          <div class="hotdeal">
+            <img src="https://myexclusivedeals.com/blog/wp-content/uploads/2024/06/Ullu.png" height="300" , width="280"
+              draggable="false">
+            <h3>Ullu Series</h3>
+          </div>
+
+        </div>
+      </center>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Expertise in Tvc Corporate -->
+  <!--
+  <div class="main2">
+    <div class="sec">
+      <p>Expertise in Tvc Corporate Film/Advertisement</p>
+    </div>
+
+    <div class="main2ch">
+      <div class="bbx">
+        <div class="bbx0 bbx1" style="background-color: #a7bea7ff;">
+          <p>TELESHOPPING/TALK SHOW (ASTROLOGERS, DOCTORS ETC)</p>
+        </div>
+        <div class="bbx0 bbx2" style="background-color: #49355755;">
+          <p>ADVERTISEMENT MAKING FOR FMCG COMPANIES</p>
+        </div>
+        <div class="bbx0 bbx3" style="background-color: #38353fff;">
+          <p>TOP CELEBRITIES ENDORSEMENT SERVICES</p>
+        </div>
+        <div class="bbx0 bbx4" style="background-color: #dcb0ecff;">
+          <p>PHOTO SHOOTS WITH CELEBRITIES & MODELS</p>
+        </div>
+      </div>
+
+      <div class="bbx">
+        <div class="bbx0 bbx5" style="background-color: #957b91ff;">
+          <p>SHORT FILMS MAKING</p>
+        </div>
+        <div class="bbx0 bbx6" style="background-color: #54735fff;">
+          <p>DOCUMENTRIES MAKING</p>
+        </div>
+        <div class="bbx0 bbx7" style="background-color: #5c8773ff;">
+          <p>MUSIC VIDEO PRODUCTION</p>
+        </div>
+        <div class="bbx0 bbx8" style="background-color: #2b4a47ff;">
+          <p>SERIALS PRODUCTION TV SHOWS</p>
+        </div>
+      </div>
+
+      <div class="bbx">
+        <div class="bbx0 bbx9" style="background-color: #ddbfffff;">
+          <p>BUILDERS CORPORATE MOVIE</p>
+        </div>
+        <div class="bbx0 bbx10" style="background-color: #52353dff;">
+          <p>BUILDERS TVC'S</p>
+        </div>
+        <div class="bbx0 bbx11" style="background-color: #8e8a96ff;">
+          <p>BUILDERS 3D,4D,5D,7D WALK THROUGH</p>
+        </div>
+        <div class="bbx0 bbx12" style="background-color: #694f69ff;">
+          <p>PRODUCT PHOTO SHOOT SERVICE</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+  <center>
+    <div class="avertising">
+      <h2>BARTER MEDIA</h2>
+    </div>
+  </center>
+
+  <div class="BarterMedia">
+    <div class="barterchild1">
+      <b>High Trp Daily Shows on Enetertainment Channels</b>
+      <ul>
+        <li>Kausati zindagi kay 2</li>
+        <li>Ye rishta kya kehlata hai</li>
+        <li>Nazar</li>
+        <li>Divya drishti</li>
+        <li>Babhi je ghar pein hai</li>
+        <li>Tarak mehta ka ulta chasma & others</li>
+      </ul>
+      <strong>Top News Channels Exclusive Shows</strong>
+
+      <ul>
+        <li>Abp news ( ghanti bajayoo )</li>
+        <li>Zee news ( dna )</li>
+        <li>Apki adalat ( india tv )</li>
+        <li>Dastak ( aajtak )</li>
+      </ul>
+      <strong>Top Reality Shows of India on Enetertainment Channels Like</strong>
+      <ul>
+        <li>Big Boss</li>
+        <li>Khatron k khiladi</li>
+        <li>Dance plus</li>
+        <li>Kaun banega crorepati</li>
+        <li>Nach baliye</li>
+      </ul>
+    </div>
+
+    <div class="barterchild2">
+      <img src="{% static 'uploads/Serviceadvrtise/bartermedia1.webp' %}" height="300px" width="450px" /><br />
+      <div class="barterch">
+        <strong>Scope for New Startup Companies</strong>
+        <ul>
+          <li>Marketing planning</li>
+          <li>Product tg planning</li>
+          <li>Customising product range & new schemes planning</li>
+          <li>Call center facility</li>
+          <li>Product display through big bazaar , hyper city & others</li>
+          <li>Media services in barter</li>
+          <li>Low budget marketing schemes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <center>
+    <div class="avertising">
+      <h2>NEWS CHANNELS</h2>
+    </div>
+  </center>
+  <marquee>
+    <img src="https://thumbs.dreamstime.com/b/print-205336974.jpg" alt="1" />
+    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201610/aajtak1_647_101416110814.jpg" alt="2" />
+    <img src="https://www.livenewsmag.com/wp-content/uploads/2016/09/CNBC-Awaaz-News-Live.jpg" alt="3" />
+    <img src="https://itvnext.in/wp-content/uploads/2023/11/INDIA_NEWS_BANK.png" alt="4" />
+    <img
+      src="http://static1.squarespace.com/static/52fdbf33e4b049560879a8d7/t/630aa96a0ac8de7150fcd885/1661643118475/Broadcast_Design_IndiaTV_RD+(5).jpg?format=1500w"
+      alt="5" />
+    <img src="https://v3img.voot.com/v3Storage/assets/cnn-news18-anchors-for-jio-1694096695511.jpg" alt="6" />
+    <img src="{% static 'uploads/news/new24.png' %}" alt="7" />
+    <img src="https://exchange4media.gumlet.io/news-photo/144081-Screenshot2025-06-0410.03.031.png" alt="13" />
+    <img src="{% static 'uploads/news/new24hai.png' %}" alt="8" />
+    <img src="{% static 'uploads/news/newnational.png' %}" alt="9" />
+    <img src="{% static 'uploads/news/rbharta.png' %}" alt="10" />
+    <img src="{% static 'uploads/news/timesnow.png' %}" alt="11" />
+    <img src="{% static 'uploads/news/zbusiness.png' %}" alt="12" />
+    <img src="{% static 'uploads/news/zeenews.png' %}" alt="13" />
+  </marquee>
+
+  <br />
+
+
+
+  <section>
+    <center>
+      <div class="avertising">
+        <h2>OUR CLIENTS</h2>
+      </div>
+    </center>
+    <p style="color: white; text-align: center;">Trusted by brands across industries</p>
+
+    <marquee behavior="scroll" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+
+      <div class="track" id="track">
+        <!-- ========================================================================================== -->
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl1.webp' %}" alt="Client 1" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl2.webp' %}" alt="Client 2" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl3.webp' %}" alt="Client 3" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl4.webp' %}" alt="Client 4" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl5.webp' %}" alt="Client 5" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl6.webp' %}" alt="Client 6" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl7.webp' %}" alt="Client 7" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl8.webp' %}" alt="Client 8" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl9.webp' %}" alt="Client 9" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl10.webp' %}" alt="Client 10" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl25.webp' %}" alt="Client 11" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl12.webp' %}" alt="Client 12" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl13.webp' %}" alt="Client 13" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl14.webp' %}" alt="Client 14" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl15.webp' %}" alt="Client 15" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl16.webp' %}" alt="Client 16" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl17.webp' %}" alt="Client 17" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl18.webp' %}" alt="Client 18" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl19.webp' %}" alt="Client 19" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl20.webp' %}" alt="Client 20" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl22.webp' %}" alt="Client 22" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl23.webp' %}" alt="Client 23" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl24.webp' %}" alt="Client 24" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl25.webp' %}" alt="Client 25" width="300px" height="200px" />
+        </a>
+        <!-- =================================================================== -->
+      </div>
+
+    </marquee>
+  </section>
+
+
+
+
+
+  <!-- scroll down rating ke liye code -->
+
+  <section class="stats" id="stats">
+    <div class="grid">
+      <article class="card">
+        <div class="label">Happy Clients</div>
+        <div class="value">
+          <span class="counter" data-target="5000">0</span><span class="suffix">+</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="label">Businesses Served</div>
+        <div class="value">
+          <span class="counter" data-target="3000">0</span><span class="suffix">+</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="label">Projects Delivered</div>
+        <div class="value">
+          <span class="counter" data-target="4000">0</span><span class="suffix">+</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+    </script>
+
+
+
+
+
+  <script>
+    // scroll down rating ke liye page
+
+    const formatNumber = (n) => n.toLocaleString('en-IN')
+
+    // Animate a single counter from 0 to target
+    function animateCounter(el, { duration = 1500 } = {}) {
+      const target = parseInt(el.getAttribute('data-target'), 10)
+      if (isNaN(target)) return
+      const start = 0
+      const startTime = performance.now()
+
+      function tick(now) {
+        const p = Math.min(1, (now - startTime) / duration)
+        const eased = 1 - Math.pow(1 - p, 3) // easeOutCubic
+        const value = Math.floor(start + (target - start) * eased)
+        el.textContent = formatNumber(value)
+        if (p < 1) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    }
+
+    // Trigger animation when the stats section enters the viewport
+    const section = document.querySelector('#stats')
+    const counters = [...document.querySelectorAll('.counter')]
+    let played = false // run once
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !played) {
+            played = true
+            counters.forEach((el) => animateCounter(el, { duration: 1600 }))
+            io.disconnect()
+          }
+        })
+      },
+      { threshold: 0.3 }
+    )
+
+    io.observe(section)
+
+    // Optional: re-run on click for demo/testing
+    section.addEventListener('click', () => {
+      played = false
+      counters.forEach((c) => (c.textContent = '0'))
+      io.observe(section)
+    })
+  </script>
+</body>
+{% endblock %}

@@ -1,0 +1,569 @@
+{% extends "whatsApp.html" %}
+
+{% load static %}
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+{% comment %} <marquee style="position: fixed; z-index: 1; color: white;"><h1>Welcome to Pooja Movie Creations</h1></marquee> {% endcomment %}
+
+<body>
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="{% static 'uploads/home/demo-1.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'uploads/home/demo-2.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+        <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'uploads/home/demo-3.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+        <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'uploads/home/demo-5.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+        <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'uploads/home/demo-7.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+        <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'uploads/home/demo-8.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+        <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'uploads/home/demo-9.webp' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'uploads/home/coprate.png' %}" class="d-block w-100" height="600px" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+  <div class="introduction">
+    <div class="Ich1">
+      <div style="margin-top: 80px; width: 100%">
+        <h4><b>Pooja Movie Creations is India's No-1 Brand Promotion Company</b></h4><br>
+        <p>WE have well-known & significant group of companies since 2008, under this group
+          14 companies actively working.
+          Group consists of Two Indian Partners belongs to Media industry.</p>
+        <p>Pooja Movie Creations is responsible for Movies,
+          Ad Films, Production House, Trading, Investment, Barter Media, Consultants, Constructions, Broadcast,
+          interiorUncle.com Application,
+          Automobiles, FMCG etc. We are proud to say that Management of each division & work, we have a separate team.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="Ich2">
+      {% comment %} <img src="{% static 'uploads/services/srvc12.jpg' %}"> {% endcomment %}
+      <div>
+        <img src="{% static 'uploads/home/poojabaner.webp' %}">
+        <center>
+          <div><a href="{% url 'contact' %}"><button class="contact-btn">Contact Us</button></a></div>
+        </center>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!--These are the Services offer by Pooja Movie Creations-->
+  <div class="services">
+    <div class="firstchild">
+      <div class="arrow">These are the Services offer by<br> Pooja Movie Creations</div>
+    </div>
+
+    <div class="service">
+      <div class="servicechild">
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/srvc2.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Video Production</div>
+          <div class="details"> engage, inspire, and connect with audiences.</div>
+        </div>
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/srvc14.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Brand Promotion</div>
+          <div class="details"> awareness, and influencing customers to connect with a brand.</div>
+        </div>
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/gallery/gl12.jpeg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Celebrity Endorsement</div>
+          <div class="details">visibility, and influence among audiences.</div>
+        </div>
+      </div>
+
+      <div class="servicechild">
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/srvc9.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Ad Film Production</div>
+          <div class="details">delivering compelling stories through the art of cinema.</div>
+        </div>
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/srvc15advrfilm.webp' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Advertising Film</div>
+          <div class="details"> brands by engaging and influencing audiences.</div>
+        </div>
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/sortfilm.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Short Films</div>
+          <div class="details"> lasting impact in just a few minutes.</div>
+        </div>
+      </div>
+
+      <div class="servicechild">
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/srvc12.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">TV Ad Maker</div>
+          <div class="details"> connect brands with mass audiences.</div>
+        </div>
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/corporate.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">Ad Films and Many More</div>
+          <div class="details"> promote, inspire, and entertain.</div>
+        </div>
+        <div class="serviceCh"
+          style="background-image : url({% static 'uploads/services/tvbroadcast2.jpg' %}); background-size: cover; background-position: center; background-size: contain; background-repeat: no-repeat; height: 165px; width:230px;">
+          <div class="heading">TV Broadcast</div>
+          <div class="details">audiences across channels in real-time.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <section class="iplservices">
+    <div class="iplserviceschild" style="background-image:url('{% static 'uploads/home/iplteam.webp' %}')">
+
+      <div style="position: absolute; 
+                    top: 0; left: 0; right: 0; bottom: 0; 
+                    background-color: rgba(0, 0, 0, 0.54);">
+      </div>
+
+
+      <div class="iplservicestext">
+        IPL CRICKET GROUND ADVERTISING</div>
+    </div>
+  </section>
+
+
+
+<br>
+  <div class="ipl">
+  <div class="iplservice">
+    <div class="iplimg">
+      <img src="{% static 'uploads/home/ground.png' %}" alt="Client1">
+      <div class="ipltext">
+        <h5>IPL Ground Advertising</h5>
+      </div>
+    </div>
+
+    <div class="iplimg">
+      <img src="{% static 'uploads/home/dress.png' %}" alt="Client2">
+      <div class="ipltext">
+        <h5>IPL Drees Advertising</h5>
+      </div>
+    </div>
+
+    <div class="iplimg">
+      <img src="{% static 'uploads/home/silveradv.jfif' %}" alt="Client3">
+      <div class="ipltext">
+        <h5>Kairali health</h5>
+      </div>
+    </div>
+
+    <div class="iplimg">
+      <img src="{% static 'uploads/home/screens.png' %}" alt="Client4">
+      <div class="ipltext">
+        <h5>TV Sports Advertising</h5>
+      </div>
+    </div>
+
+    <div class="iplimg">
+      <img src="{% static 'uploads/home/masterhead_logo.avif' %}" alt="Client5">
+      <div class="ipltext">
+        <h5>Silver Screen Advertising</h5>
+      </div>
+    </div>
+    
+</div>
+  </div>
+
+
+  <br>
+  <!-- Our awards-->
+  <center>
+    <h2 class="design"> Awards</h2>
+  </center><br>
+  <div class="awards">
+    <img src="{% static 'uploads/awards/aw1.jpeg' %}" alt="Award 1">
+    <img src="{% static 'uploads/awards/aw2.jpeg' %}" alt="Award 2">
+    <img src="{% static 'uploads/awards/aw3.jpeg' %}" alt="Award 3">
+    <img src="{% static 'uploads/awards/aw4.jpeg' %}" alt="Award 4">
+    <img src="{% static 'uploads/awards/aw5.jpeg' %}" alt="Award 5">
+    <img src="{% static 'uploads/awards/aw6.jpeg' %}" alt="Award 6">
+  </div>
+
+
+
+
+
+
+  <br><br>
+  <!--Our clients-->
+  <section>
+    <center>
+      <h2 class="design">Our Clients</h2>
+    </center>
+    <p style="color: white; text-align: center;">Trusted by brands across industries</p>
+
+    <marquee behavior="scroll" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+
+      <div class="track" id="track">
+        <!-- ============ ORIGINAL SET (replace src with your logos) ============ -->
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl1.webp' %}" alt="Client 1" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl2.webp' %}" alt="Client 2" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl3.webp' %}" alt="Client 3" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl4.webp' %}" alt="Client 4" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl5.webp' %}" alt="Client 5" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl6.webp' %}" alt="Client 6" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl7.webp' %}" alt="Client 7" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl8.webp' %}" alt="Client 8" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl9.webp' %}" alt="Client 9" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl10.webp' %}" alt="Client 10" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl25.webp' %}" alt="Client 11" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl12.webp' %}" alt="Client 12" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl13.webp' %}" alt="Client 13" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl14.webp' %}" alt="Client 14" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl15.webp' %}" alt="Client 15" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl16.webp' %}" alt="Client 16" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl17.webp' %}" alt="Client 17" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl18.webp' %}" alt="Client 18" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl19.webp' %}" alt="Client 19" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl20.webp' %}" alt="Client 20" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl22.webp' %}" alt="Client 22" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl23.webp' %}" alt="Client 23" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl24.webp' %}" alt="Client 24" width="300px" height="200px" />
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/ourclient/cl25.webp' %}" alt="Client 25" width="300px" height="200px" />
+        </a>
+        <!-- =================================================================== -->
+      </div>
+
+    </marquee>
+  </section>
+  <br>
+
+
+
+  <section>
+    <center>
+      <h2 class="design">News Channels</h2>
+    </center>
+
+    <marquee behavior="scroll" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+
+      <div class="track" id="track">
+        <!-- ============ ORIGINAL SET (replace src with your logos) ============ -->
+        <a href="#">
+          <img src="{% static 'uploads/news/abp.png' %}" alt="1" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/zeenews.png' %}" alt="2" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/zbusiness.png' %}" alt="3" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/rbharta.png' %}" alt="Client 4" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/newnational.png' %}" alt="Client 5" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/new24hai.png' %}" alt="Client 6" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/new24.png' %}" alt="Client 7" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/new18.png' %}" alt="Client 8" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/indiatv.png' %}" alt="Client 9" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/indianews.png' %}" alt="Client 10" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/cbnc.png' %}" alt="Client 11" width="300px" height="200px">
+        </a>
+        <a href="#">
+          <img src="{% static 'uploads/news/ajatak.png' %}" alt="Client 12" width="300px" height="200px">
+        </a>
+
+        <!-- =================================================================== -->
+      </div>
+
+    </marquee>
+  </section>
+  <br>
+
+
+  <!--What Our Clients says-->
+
+  <center>
+    <h2 class="design">What Our Clients Say</h2>
+  </center>
+  <div class="clients-slider">
+    <div class="clients-track">
+      <!-- Repeatable client card -->
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1">
+        <h4>Rohit Kumar</h4>
+        <p>"We highly recommend [Pooja Movie Creation] for their exceptional service and outstanding results."</p>
+      </div>
+
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2">
+        <h4>Priya Sharma</h4>
+        <p>"The team is very professional.<br>Thanks to [Pooja Movie Creation], our brand has achieved new levels of
+          visibility and engagement."</p>
+      </div>
+
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Client 3">
+        <h4>Arjun Singh</h4>
+        <p>"Highly recommend their services. <br>We highly recommend [Pooja Movie Creation] for their exceptional
+          service and outstanding results."</p>
+      </div>
+
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="Client 4">
+        <h4>Anita Verma</h4>
+        <p>"Very satisfied with the results!. Their strategic planning and execution have significantly improved our
+          brand's visibility and engagement."
+        </p>
+      </div>
+
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/70.jpg" alt="Client 5">
+        <h4>Vikas Yadav</h4>
+        <p>"Quick delivery and quality work. <br>We couldn't be happier with the results delivered by [Pooja Movie
+          Creation]. They are true
+          professionals."</p>
+      </div>
+
+      <!-- Duplicate cards again for infinite loop feel -->
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1">
+        <h4>Rohit Kumar</h4>
+        <p>"We are extremely satisfied with the results delivered by [Pooja Movie Creation]. They are true
+          professionals."</p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client 2">
+        <h4>Priyanka Sharma</h4>
+        <p>"Their innovative approach and commitment to excellence have driven our marketing success."</p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/94.jpg" alt="Client 3">
+        <h4>Vikash Yadav</h4>
+        <p>"Their innovative strategies and creative solutions have driven our marketing success." </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/89.jpg" alt="Client 4">
+        <h4>Kartik Kumar</h4>
+        <p>"We have been consistently impressed with the quality of work and the results delivered by [Pooja Movie
+          Creation]." </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/99.jpg" alt="Client 5">
+        <h4>Khushboo Khatoon</h4>
+        <p>"Their creative campaigns and effective strategies have delivered exceptional results for our business."
+        </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/41.jpg" alt="Client 6">
+        <h4>Rashami Devi</h4>
+        <p> "We highly recommend [Pooja Movie Creation] for their exceptional service and outstanding results." </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="Client 7">
+        <h4>Charan Dev</h4>
+        <p> "The team at [Pooja Movie Creation] is fantastic. They truly understand our needs and always deliver
+          exceptional results." </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Client 8">
+        <h4>Priyanshu Shukala</h4>
+        <p>"Working with [Pooja Movie Creation] has been a game-changer for our business. Their creativity and
+          dedication are unmatched." </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/18.jpg" alt="Client 9">
+        <h4>Zara Khan</h4>
+        <p>"Thanks to [Pooja Movie Creation], our brand has reached new heights. Their expertise in digital marketing
+          is unparalleled." </p>
+      </div>
+      <div class="client-card">
+        <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Client 10">
+        <h4>Anshika Singh</h4>
+        <p>"I highly recommend [Pooja Movie Creation]. They are professional, reliable, and incredibly talented." </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- scroll down rating ke liye code-->
+
+  <section class="stats" id="stats">
+    <div class="grid">
+      <article class="card">
+        <div class="label">Happy Clients</div>
+        <div class="value"><span class="counter" data-target="5000">0</span><span class="suffix">+</span></div>
+      </article>
+      <article class="card">
+        <div class="label">Businesses Served</div>
+        <div class="value"><span class="counter" data-target="3000">0</span><span class="suffix">+</span></div>
+      </article>
+      <article class="card">
+        <div class="label">Projects Delivered</div>
+        <div class="value"><span class="counter" data-target="4000">0</span><span class="suffix">+</span></div>
+      </article>
+    </div>
+  </section>
+
+
+
+
+  <script>
+    // scroll down rating ke liye page
+    const formatNumber = (n) => n.toLocaleString('en-IN');
+
+    // Animate a single counter from 0 to target
+    function animateCounter(el, { duration = 1500 } = {}) {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      if (isNaN(target)) return;
+      const start = 0;
+      const startTime = performance.now();
+
+
+      function tick(now) {
+        const p = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        const value = Math.floor(start + (target - start) * eased);
+        el.textContent = formatNumber(value);
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+
+    // Trigger animation when the stats section enters the viewport
+    const section = document.querySelector('#stats');
+    const counters = [...document.querySelectorAll('.counter')];
+    let played = false; // run once
+
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !played) {
+          played = true;
+          counters.forEach(el => animateCounter(el, { duration: 1600 }));
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+
+    io.observe(section);
+
+
+    // Optional: re-run on click for demo/testing
+    section.addEventListener('click', () => {
+      played = false;
+      counters.forEach(c => c.textContent = '0');
+      io.observe(section);
+    });
+
+
+
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+</body>
+
+{% endblock %}

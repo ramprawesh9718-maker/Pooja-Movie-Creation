@@ -1,0 +1,227 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Television Media Advertising</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background: linear-gradient(135deg,#0d47a1,#002171); color:#fff; overflow-x:hidden;}
+a{text-decoration:none;}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:80vh;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:url('https://www.marketingevolution.com/hubfs/3%20media%20trends%20affecting%20the%20success%20of%20tv%20advertising%20this%20year.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,50,0.6);
+}
+.hero-content{
+  position:relative; z-index:1; max-width:900px;
+}
+.hero-content h1{font-size:3rem;margin-bottom:15px;}
+.hero-content p{font-size:1.3rem;margin-bottom:30px; color:#d0d9ff;}
+.btn-group{display:flex; gap:20px; justify-content:center; flex-wrap:wrap;}
+.btn{padding:12px 28px;border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:0.3s;}
+.btn-primary{background:#00bcd4;color:#fff;}
+.btn-primary:hover{background:#0097a7;}
+.btn-outline{border:2px solid #fff;background:transparent;color:#fff;}
+.btn-outline:hover{background:#fff;color:#002171;}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-15px);}}
+
+/* SECTIONS */
+section{padding:80px 8%; max-width:1400px; margin:auto;}
+section h2{text-align:center;margin-bottom:15px;font-size:2.6rem;}
+section p.lead{text-align:center;font-size:1.1rem;margin-bottom:50px;color:#d0d9ff;}
+
+/* SERVICES */
+.services{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
+.service{background:rgba(255,255,255,0.1); border-radius:12px; overflow:hidden; transition:0.4s;}
+.service:hover{transform:translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,0.3);}
+.service img{width:100%; height:200px; object-fit:cover;}
+.service h3{margin:15px;font-size:1.4rem;}
+.service p{margin:0 15px 20px;color:#e3f2fd;}
+
+/* PACKAGES */
+.packages{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;}
+.package{background:rgba(255,255,255,0.1); border-radius:12px; padding:20px; transition:0.3s;}
+.package:hover{transform:translateY(-10px); box-shadow:0 8px 25px rgba(0,0,0,0.3);}
+.package h3{font-size:1.5rem;margin-bottom:10px;}
+.package p.price{font-size:1.4rem;font-weight:bold;color:#00bcd4;margin-bottom:15px;}
+.package ul{list-style:none;}
+.package ul li{margin-bottom:10px;color:#e3f2fd;}
+
+/* FEATURES */
+.features{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;}
+.feature{background:rgba(255,255,255,0.1); border-radius:12px; padding:20px; text-align:center; transition:0.3s;}
+.feature img{width:100%; height:150px; object-fit:cover; border-radius:8px; margin-bottom:15px;}
+.feature h3{margin-bottom:10px;font-size:1.3rem;}
+.feature p{color:#e3f2fd;}
+
+/* CONTACT */
+.contact{text-align:center;}
+.contact a{display:inline-block;padding:12px 30px;background:#00bcd4;color:#fff;border-radius:8px;font-weight:600;transition:0.3s;margin-top:20px;}
+.contact a:hover{background:#0097a7;}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0; transform:translateY(50px); transition:all 0.8s ease;}
+.reveal.active{opacity:1; transform:translateY(0);}
+
+@media(max-width:768px){.hero-content h1{font-size:2.2rem;}.hero-content p{font-size:1rem;}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Television Media Advertising</h1>
+    <p>Reach millions through TV campaigns that maximize brand visibility and ROI.</p>
+    <div class="btn-group">
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Contact Us</a>
+      <a href="#services" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+  
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="reveal">Our Services</h2>
+  <p class="lead reveal">TV advertising solutions to meet every marketing need.</p>
+  <div class="services">
+    <div class="service reveal">
+      <img src="https://i.ytimg.com/vi/Ohci_M9I3jM/maxresdefault.jpg" alt="TV Commercials">
+      <h3>TV Commercial Production</h3>
+      <p>Creative production for engaging television advertisements.</p>
+    </div>
+    <div class="service reveal">
+      <img src="https://www.knorex.com/wp-content/uploads/2019/12/media-buying1.jpg">
+      <h3>Media Planning & Buying</h3>
+      <p>Strategic planning to place ads in prime time slots.</p>
+    </div>
+    <div class="service reveal">
+      <img src="https://ergadx.com/wp-content/uploads/2022/10/Untitled-design-1.png">
+      <h3>Campaign Management</h3>
+      <p>End-to-end campaign monitoring and performance optimization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section>
+  <h2 class="reveal">Our Packages</h2>
+  <p class="lead reveal">Choose the TV advertising package that fits your brand and budget.</p>
+  <div class="packages">
+    <div class="package reveal">
+      <h3>Starter Package</h3>
+      <p class="price">$799</p>
+      <ul>
+        <li>1 TV spot production</li>
+        <li>Basic media placement</li>
+        <li>Performance report</li>
+      </ul>
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Get Started</a>
+    </div>
+    <div class="package reveal" style="background:rgba(255,152,0,0.1);border:3px solid #ff9800;">
+      <h3>Professional Package</h3>
+      <p class="price" style="color:#ff9800;">$1499</p>
+      <ul>
+        <li>3 TV spot productions</li>
+        <li>Prime time media placement</li>
+        <li>Advanced analytics & optimization</li>
+      </ul>
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Get Started</a>
+      <p style="margin-top:10px;font-weight:bold;color:#ff9800;">Most Popular</p>
+    </div>
+    <div class="package reveal">
+      <h3>Enterprise Package</h3>
+      <p class="price">$2999</p>
+      <ul>
+        <li>Custom TV campaigns</li>
+        <li>Unlimited media placements</li>
+        <li>Dedicated account manager</li>
+        <li>Full reporting & optimization</li>
+      </ul>
+      <a href="mailto:pmc@gmail.com" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <h2 class="reveal">Why Choose TV Advertising?</h2>
+  <p class="lead reveal">Maximize reach, credibility, and brand impact through television media.</p>
+  <div class="features">
+    <div class="feature reveal">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=600&q=80" alt="Wide Reach">
+      <h3>Wide Audience Reach</h3>
+      <p>Connect with millions across multiple demographics.</p>
+    </div>
+    <div class="feature reveal">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.fJEk8FgC-Gi4otnlu0gnxAHaEk?pid=Api&P=0&h=220">
+      <h3>Brand Credibility</h3>
+      <p>TV advertising enhances trust and recognition.</p>
+    </div>
+    <div class="feature reveal">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.EteOJkaqujwf-xXHkARsbgHaE8?pid=Api&P=0&h=220" alt="High ROI">
+      <h3>High ROI</h3>
+      <p>Effective campaigns that deliver measurable results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2 class="reveal">Get Started Today</h2>
+  <p class="lead reveal">Contact us to launch your TV advertising campaign.</p>
+  <a href="{% url 'contact' %}" class="reveal">Contact Us</a>
+</section>
+
+<script>
+// Reveal animation
+const reveals = document.querySelectorAll('.reveal');
+function revealOnScroll(){
+  for(let i=0;i<reveals.length;i++){
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
+    if(revealTop < windowHeight - revealPoint){
+      reveals[i].classList.add('active');
+    }
+  }
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+// Hero parallax
+const hero = document.querySelector('.hero');
+window.addEventListener('scroll', ()=>{
+  const offset = window.pageYOffset;
+  hero.style.backgroundPositionY = offset * 0.5 + "px";
+});
+
+// Scroll down arrow click
+document.querySelector('.scroll-down').addEventListener('click', ()=>{
+  document.querySelector('#services').scrollIntoView({behavior:'smooth'});
+});
+</script>
+
+</body>
+</html>
+{% endblock %}

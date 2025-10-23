@@ -1,0 +1,220 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PVR Advertising — Premium Showcase</title>
+  <meta name="description" content="Advertise with PVR — premium cinema advertising options with beautiful visuals and lead form" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#041225; --deep:#06243d; --royal:#0f4ca3; --gold:#ffd166; --cyan:#39a8ff; --muted:#9fb7d9; --glass:rgba(255,255,255,0.03)
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:linear-gradient(180deg,var(--navy),var(--deep));color:#eaf6ff;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:1300px;margin:0 auto;padding:28px}
+
+    /* HERO full-screen banner */
+    .hero{position:relative;border-radius:14px;overflow:hidden;margin-bottom:28px;min-height:78vh;display:flex;align-items:center}
+    .hero__bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1517604931442-65a5f4b4b0b5?q=80&w=2400&auto=format&fit=crop&s=');background-size:cover;background-position:center;transform:scale(1.02);filter:contrast(0.98) saturate(1.05)}
+    .hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,10,30,0.55),rgba(2,10,30,0.78))}
+    .hero__content{position:relative;z-index:2;display:flex;gap:30px;align-items:center;padding:48px 72px}
+    .hero__left{max-width:720px}
+    .kicker{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.04);color:var(--gold);font-weight:800;margin-bottom:14px}
+    .hero h1{font-size:48px;line-height:1.02;margin-bottom:12px;letter-spacing:-0.6px;text-shadow:0 12px 40px rgba(2,6,23,0.6)}
+    .hero p{color:var(--muted);font-size:16px;margin-bottom:18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:800}
+    .btn--gold{background:linear-gradient(90deg,var(--gold),#ffb84d);color:#052033;box-shadow:0 14px 40px rgba(255,193,88,0.12)}
+    .btn--ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .hero__right{width:420px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .hero__right img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* sections */
+    .section{padding:34px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .section h2{color:var(--cyan);margin-bottom:10px}
+    .muted{color:var(--muted)}
+
+    /* Why advertise */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .why-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .22s,box-shadow .22s}
+    .why-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(2,6,23,0.6)}
+    .why-icon{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--royal));display:flex;align-items:center;justify-content:center;font-weight:800;color:#052033;margin-bottom:12px}
+
+    /* Options grid */
+    .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .opt{position:relative;border-radius:12px;overflow:hidden;height:230px;cursor:pointer;border:1px solid rgba(255,255,255,0.03);transition:transform .28s,box-shadow .28s}
+    .opt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+    .opt:hover img{transform:scale(1.06)}
+    .opt .cap{position:absolute;left:12px;bottom:12px;background:linear-gradient(90deg,rgba(2,6,23,0.6),rgba(2,6,23,0.2));padding:10px 12px;border-radius:10px;color:white;font-weight:700}
+    .opt .badge{position:absolute;right:12px;top:12px;background:linear-gradient(90deg,var(--gold),#ffb84d);padding:6px 10px;border-radius:8px;color:#052033;font-weight:800}
+
+    /* showcase */
+    .showcase{display:flex;gap:12px;align-items:stretch}
+    .showcase .big{flex:2;border-radius:12px;overflow:hidden;position:relative;height:600px}
+    .showcase .small{flex:1;display:flex;flex-direction:column;gap:12px}
+    .small .sitem{flex:1;border-radius:12px;overflow:hidden;position:relative}
+
+    /* stats */
+    .stats{display:flex;gap:12px}
+    .stat{flex:1;padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-align:center}
+    .stat h3{font-size:34px;margin-bottom:6px}
+
+    /* case studies */
+    .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .case{border-radius:12px;overflow:hidden;position:relative;height:200px}
+    .case .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(2,6,23,0.6));padding:12px;color:white;display:flex;flex-direction:column;justify-content:flex-end}
+
+    /* quick contact */
+    .quick{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--royal),#0b3b78);padding:12px 14px;border-radius:12px;color:white;box-shadow:0 12px 40px rgba(7,24,48,0.6);z-index:99;cursor:pointer}
+
+    /* responsive */
+    @media (max-width:1100px){.why-grid{grid-template-columns:repeat(2,1fr)}.options-grid{grid-template-columns:repeat(2,1fr)}.lead-form{grid-template-columns:1fr}.hero__content{padding:28px}}
+    @media (max-width:680px){.hero{min-height:52vh}.options-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.stats{flex-direction:column}}
+
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="hero fadeup">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <div class="hero__left">
+          <div class="kicker">Advertise with PVR</div>
+          <h1>Put your brand where audiences are fully engaged — the big screen</h1>
+          <p class="lead muted">Premium placements across screens, lobbies and experiential spaces. We help brands cut through the noise with impactful creative and measurable results.</p>
+          <div class="cta-row">
+            <button class="btn btn--gold" id="kit">Download Media Kit</button>
+            <button class="btn btn--ghost" id="contact">Talk to Sales</button>
+          </div>
+          <div style="margin-top:14px;color:var(--muted);font-size:13px">Trusted by leading brands • Nationwide reach • Custom campaigns</div>
+        </div>
+
+        <div class="hero__right">
+          <img src="https://www.taxscan.in/wp-content/uploads/2021/07/Service-tax-OIDAR-f-ticket-from-cinema-hall-CESTAT-PVR-Taxscan.jpg" alt="Cinema Lobby" />
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section fadeup">
+      <h2>Why advertise with PVR</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">R</div>
+          <h3>Mass Reach</h3>
+          <p class="muted">Pan-India screens, metropolitan and regional markets — frequency + scale.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">P</div>
+          <h3>Premium Environment</h3>
+          <p class="muted">Audiences are attentive — perfect for high-impact storytelling.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">T</div>
+          <h3>Flexible Formats</h3>
+          <p class="muted">On-screen, lobby, sampling, POS and experiential — we tailor to campaign goals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS -->
+    <section class="section fadeup">
+      <h2>Advertising Options</h2>
+      <div class="options-grid">
+        <div class="opt" data-type="On-Screen"><img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?q=80&w=1400&auto=format&fit=crop&s=" alt="On-screen"><div class="cap">On-Screen Ads</div><div class="badge">Most Visible</div></div>
+        <div class="opt" data-type="Lobby"><img src="https://i.ytimg.com/vi/1TiVb2eCqZk/maxresdefault.jpg" alt="Lobby"><div class="cap">Lobby & Foyers</div></div>
+        <div class="opt" data-type="Experiential"><img src="https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?q=80&w=1400&auto=format&fit=crop&s=" alt="Experiential"><div class="cap">Experiential</div></div>
+        <div class="opt" data-type="Standees"><img src="https://5.imimg.com/data5/TO/UZ/UD/IOS-15807869/product-jpeg-500x500.png" alt="Standees"><div class="cap">Standees & POS</div></div>
+        <div class="opt" data-type="Digital"><img src="https://tse3.mm.bing.net/th/id/OIP.Q_ZSqG-ucK-66o4aqiElJwHaDc?pid=Api&P=0&h=220" alt="Digital"><div class="cap">Digital Screens</div></div>
+        <div class="opt" data-type="Sampling"><img src="https://tse1.mm.bing.net/th/id/OIP.q73cYdYHySoQdLV2qwexsQHaEK?pid=Api&P=0&h=220" alt="Sampling"><div class="cap">Sampling & Custom</div></div>
+      </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section class="section fadeup">
+      <h2>Creative Showcase</h2>
+      <div class="showcase">
+        <div class="big"><img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-3a7jtlu3qtbj5u1cb3tmug5go7-20210729190910.Medi.jpeg" style="width:100%;height:100%;object-fit:cover;display:block" alt="Takeover"></div>
+        <div class="small">
+          <div class="sitem"><img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop&s=" style="width:100%;height:100%;object-fit:cover;display:block" alt="Poster"></div>
+          <div class="sitem"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop&s=" style="width:100%;height:100%;object-fit:cover;display:block" alt="Sampling"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section fadeup">
+      <h2>Impact in Numbers</h2>
+      <div class="stats">
+        <div class="stat"><h3 id="stat1">0</h3><p class="muted">Annual Viewers</p></div>
+        <div class="stat"><h3 id="stat2">0</h3><p class="muted">Screens Nationwide</p></div>
+        <div class="stat"><h3 id="stat3">0</h3><p class="muted">Campaigns Delivered</p></div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="section fadeup">
+      <h2>Recent Case Studies</h2>
+      <div class="case-grid">
+        <div class="case" style="background-image:url('https://tse2.mm.bing.net/th/id/OIP.NIq9e2TgBE5mjdhX5nOyowAAAA?pid=Api&P=0&h=220');background-size:cover;background-position:center"><div class="overlay"><strong>Brand PMC — Lobby Takeover</strong><div class="muted">42% lift in brand recall</div></div></div>
+        <div class="case" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&s=');background-size:cover;background-position:center"><div class="overlay"><strong>Product Launch — On-Screen</strong><div class="muted">2.3M impressions in 2 weeks</div></div></div>
+      </div>
+    </section>
+
+    <!-- LEAD FORM -->
+    {% comment %} <section class="section fadeup">
+      <h2>Get the Media Kit</h2>
+      <div class="lead-form">
+        <div class="card-form">
+          <div class="muted">Share basic details and we will send pricing & availability.</div>
+          <input id="company" placeholder="Company / Brand" />
+          <input id="contact" placeholder="Contact person" />
+          <input id="email" placeholder="Email address" type="email" />
+          <input id="phone" placeholder="Phone (optional)" />
+          <select id="interest"><option>On-Screen Ads</option><option>Lobby / Foyer</option><option>Experiential</option><option>Standees / POS</option><option>Custom Partnership</option></select>
+          <textarea id="message" placeholder="Campaign idea, timeline or budget (optional)"></textarea>
+          <div style="display:flex;justify-content:flex-end"><button class="submit" id="send">Send Enquiry</button></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card-form" style="display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;text-align:center">
+            <div style="font-weight:800;font-size:22px;color:var(--gold)">Media Kit Preview</div>
+            <div class="muted">Instant preview (demo)</div>
+          </div>
+          <div class="card-form" id="preview" style="min-height:140px;overflow:auto"></div>
+        </div>
+      </div>
+    </section> {% endcomment %}
+
+    <div style="height:36px"></div>
+  </div>
+
+  <div class="quick" id="quick">Enquire</div>
+
+   <script>
+    // reveal animations
+    document.querySelectorAll('.fadeup').forEach((el,ii)=>{el.style.animationDelay=(ii*80)+'ms';el.classList.add('fadeup')});
+
+    // counters
+    function animateCount(id,to,duration=1400){const el=document.getElementById(id);let start=0;const step=Math.max(1,Math.floor(to/(duration/30)));const iv=setInterval(()=>{start+=step;if(start>=to){el.textContent=to.toLocaleString();clearInterval(iv)}else el.textContent=start.toLocaleString()},30)}
+    setTimeout(()=>{animateCount('stat1',52000000);animateCount('stat2',850);animateCount('stat3',1420)},500);
+
+    // options click preview
+    document.querySelectorAll('.opt').forEach(opt=>opt.addEventListener('click',()=>{const type=opt.dataset.type;const preview=document.getElementById('preview');preview.innerHTML=`<strong style=\"color:var(--gold)\">Selected: ${type}</strong><div class=\"muted\" style=\"margin-top:8px\">We will send formats, sample creatives and pricing for <strong>${type}</strong>.</div>`;preview.scrollIntoView({behavior:'smooth',block:'center'})}));
+
+  </script>
+</body>
+</html>
+
+{% endblock %}

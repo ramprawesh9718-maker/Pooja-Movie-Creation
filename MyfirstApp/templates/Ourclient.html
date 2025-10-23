@@ -1,0 +1,359 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style>
+
+
+      .wrap {
+      max-width: 1300px;
+      margin: auto;
+      padding: 20px;
+      padding-top: 0px;
+    }
+    h1 {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 2.2rem;
+      position: relative;
+    }
+
+    /* Clients Grid */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+    .client-card {
+      background: #1e293b;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: -1px -5px 12px 5px rgb(123 192 193 / 57%);
+      transition: transform .4s ease, box-shadow .4s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .client-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    }
+    .client-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .client-info {
+      padding: 15px;
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+    }
+    .client-info h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .videos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;   /* jyada videos ho to agle line me aa jaye */
+      gap: 20px;
+      padding: 20px;
+      
+    }
+
+    .videobox {
+      gap: 20px;
+      width: 400px;
+      height: 250px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: -9px -6px 10px 2px rgb(121 142 170 / 55%);
+      opacity: 0;
+      /*agar har ek ko one by one show karana ho to css ke thrue aise karte hai*/
+      transform: translate-Y(200px); /* thoda neeche se aayega */
+      animation: fadeIn 1s forwards;
+    }
+
+
+    /* Animation keyframes */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Har image ko alag-alag delay dena */
+    .videos .videobox:nth-child(1) { animation-delay: 0.5s; }
+    .videos .videobox:nth-child(2) { animation-delay: 1s; }
+    .videos .videobox:nth-child(3) { animation-delay: 1.5s; }
+    .videos .videobox:nth-child(4) { animation-delay: 2s; }
+    .videos .videobox:nth-child(5) { animation-delay: 2.5s; }
+    .videos .videobox:nth-child(6) { animation-delay: 3s; }
+    .videos .videobox:nth-child(7) { animation-delay: 3.5s; }
+
+
+    .videobox iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .videobox:hover{
+    	opacity: 0;
+    	transform: scale(1.09);
+    }
+
+
+
+
+
+
+    .Image{
+    	border: 2px solid black;
+    	opacity: 0;
+      gap: 20px;
+      width: 400px;
+      height: 250px;
+    
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: -9px -6px 10px 2px rgb(121 142 170 / 55%);
+
+      /*aagar multiple box ko ek ek karke show karana ho to use js ke thrue kr lenge*/
+       transform: translate-Y(200px); /* thoda neeche se aayega */
+      transition: opacity 1s ease, transform 2s ease;
+    }
+
+    .videos .Image.show{
+    	opacity: 1;
+    	transform: translate-Y(0);
+    }
+    .videos .Image.show img{
+      width: 400px;
+    }
+
+
+    .Image:hover{
+    	opacity: 1;
+    	transform: scale(1.09);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>🌟 Our Clients 🌟</h1>
+
+    <!-- Clients Section -->
+    <div class="clients-grid">
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl1.webp' %}" alt="Client1">
+        <div class="client-info"><h3>Kairali health</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl2.webp' %}" alt="Client2">
+        <div class="client-info"><h3>Aegte</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl3.webp' %}" alt="Client3">
+        <div class="client-info"><h3>Apex</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl4.webp' %}" alt="Client4">
+        <div class="client-info"><h3>Apex Floral</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl14.webp' %}" alt="Client4">
+        <div class="client-info"><h3>Sunflame</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl5.webp' %}" alt="Client5">
+        <div class="client-info"><h3>Christopher's</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl16.webp' %}" alt="Client6">
+        <div class="client-info"><h3>Privek</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl7.webp' %}" alt="Client7">
+        <div class="client-info"><h3>Gypstar</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl8.webp' %}" alt="Client8">
+        <div class="client-info"><h3>Romex</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl9.webp' %}" alt="Client9">
+        <div class="client-info"><h3>Fasco</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl10.webp' %}" alt="Client10">
+        <div class="client-info"><h3>Daenyx</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl15.webp' %}" alt="Client11">
+        <div class="client-info"><h3>Ramagya Sports</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl17.webp' %}" alt="Client12">
+        <div class="client-info"><h3>Chemarts</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl18.webp' %}" alt="Client12">
+        <div class="client-info"><h3>Shanky Finance</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl20.webp' %}" alt="Client12">
+        <div class="client-info"><h3>Tufex</h3></div>
+      </div>
+      <div class="client-card">
+        <img src="{% static 'uploads/ourclient/cl25.webp' %}" alt="Client12">
+        <div class="client-info"><h3>Kalash Water Storage</h3></div>
+      </div>
+    </div>
+  </div>
+
+    
+
+
+
+
+    <h1>🌟 Testimonials 🌟</h1>
+
+    <!-- Clients Section -->
+  <div class="videos">
+    <!-- Video 1 -->
+    <div class="Image">
+        <img src="{% static 'uploads/testimonials/testi2.jpeg' %}" alt="Client1">
+    </div>
+    <div class="Image">
+        <img src="{% static 'uploads/testimonials/testi3.jpeg' %}" alt="Client2">
+    </div>
+    <div class="Image">
+        <img src="{% static 'uploads/testimonials/testi4.jpeg' %}" alt="Client3">
+    </div>
+    <div class="Image">
+        <img src="{% static 'uploads/testimonials/testi5.jpeg' %}" alt="Client4">
+    </div>
+    <div class="Image">
+        <img src="{% static 'uploads/testimonials/testi6.jpeg' %}" alt="Client5">
+    </div>
+    <div class="Image">
+        <img src="{% static 'uploads/testimonials/testi7.jpeg' %}" alt="Client6">
+    </div>
+  </div>
+
+
+
+
+
+<h1>🌟 Our Video Testimonials Clients 🌟</h1>
+
+  <div class="videos">
+    <!-- Video 1 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/BZhxfCSntsQ" allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/Wc7i3SV3Fo8" allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/X76xE6xNeyA" allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/rngCwAn4Dl0" allowfullscreen></iframe>
+    </div>
+    <!-- Video 5 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/W1aO7KTlEb4" allowfullscreen></iframe>
+    </div>
+    <!-- Video 6 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/HOy27g9uUNA" allowfullscreen></iframe>
+    </div>
+    <!-- Video 6 -->
+    <div class="videobox">
+      <iframe src="https://www.youtube.com/embed/g_0_y7rSaUc" allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+
+
+<h1>🌟 Our Testimonials Clients 🌟</h1>
+  <div class="videos">
+    <!-- Video 1 -->
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c1.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c2.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c3.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c4.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c5.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c6.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c1.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c3.jpg">
+    </div>
+    <div class="Image">
+      <img src="https://poojamoviecreations.com/images/client/c6.jpg">
+    </div>
+  </div>
+
+
+
+
+
+
+ 
+ <script>
+
+    	const images = document.querySelectorAll(".videos .Image");
+
+    // Har ek image ko delay ke sath show karo
+    images.forEach((Image, index) => {
+      setTimeout(() => {
+        Image.classList.add("show");
+      }, index * 1000); // 800ms gap between each image
+    });
+
+  </script>
+
+
+</body>
+
+    {% endblock %}

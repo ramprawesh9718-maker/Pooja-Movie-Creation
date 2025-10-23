@@ -1,0 +1,231 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awards Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+  
+    }
+
+    header {
+      
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .awards-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .award {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: -2px -9px 10px 6px rgb(116 92 107 / 94%);
+      /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+    
+     transform: translate-Y(200px); /* thoda neeche se aayega */
+      transition: opacity 1s ease, transform 2s ease;
+    }
+
+    .award.show{
+      opacity: 1;
+      transform: translate-Y(0);
+    }
+
+
+    .award:hover{
+      opacity: 1;
+      transform: scale(1.09);
+    }
+
+    /*.award-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }*/
+
+    .award img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .award .content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .award h3 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .award p {
+      font-size: 0.85rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+<br><br><br>
+
+  <header>
+    <h1>🏆 Our Awards & Achievements</h1>
+  </header>
+
+  <section class="awards-section">
+    <div class="awards-grid">
+      
+      <!-- 15 Awards -->
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_2.jpg" alt="Award 2">
+        <div class="content"><h3>Best Innovation 2023</h3><p>Recognized for outstanding innovation.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/12.jpg" alt="Award 3">
+        <div class="content"><h3>Excellence Award</h3><p>Customer satisfaction & service excellence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_4.jpg" alt="Award 4">
+        <div class="content"><h3>Top Performer</h3><p>Awarded for top performance in 2022.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_5.jpg" alt="Award 5">
+        <div class="content"><h3>Global Recognition</h3><p>International recognition for excellence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_6.jpg" alt="Award 6">
+        <div class="content"><h3>Best Startup</h3><p>Honored for most promising startup.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_7.jpg" alt="Award 7">
+        <div class="content"><h3>Innovation Hub</h3><p>Recognized as leading innovation hub.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_8.jpg" alt="Award 8">
+        <div class="content"><h3>Leadership Award</h3><p>Honored for excellence in leadership.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_9.jpg" alt="Award 9">
+        <div class="content"><h3>Community Impact</h3><p>For impactful social contribution.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/new_10.jpg" alt="Award 10">
+        <div class="content"><h3>Tech Pioneer</h3><p>Recognized as a pioneer in tech.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/16.jpg" alt="Award 16">
+        <div class="content"><h3>Global Outreach</h3><p>For expanding global presence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/17.jpg" alt="Award 17">
+        <div class="content"><h3>Global Outreach</h3><p>For expanding global presence.</p></div>
+      </div>
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/18.jpg" alt="Award 18">
+        <div class="content"><h3>Global Outreach</h3><p>For expanding global presence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/19.jpg" alt="Award 19">
+        <div class="content"><h3>Global Outreach</h3><p>For expanding global presence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/20.jpg" alt="Award 20">
+        <div class="content"><h3>Global Outreach</h3><p>For expanding global presence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/21.jpg" alt="Award 21">
+        <div class="content"><h3>Global Outreach</h3><p>For expanding global presence.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/22.jpg" alt="Award 22">
+        <div class="content"><h3>Creative Excellence</h3><p>Best in creative innovation.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/23.jpg" alt="Award 23">
+        <div class="content"><h3>Customer Choice</h3><p>Voted by customers as top service.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/22.jpg" alt="Award 24">
+        <div class="content"><h3>Top 100 Global</h3><p>Ranked among top 100 worldwide.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/25.jpg" alt="Award 25">
+        <div class="content"><h3>Best Workplace</h3><p>Recognized as best workplace 2023.</p></div>
+      </div>
+
+      <div class="award">
+        <img src="https://poojamoviecreations.com/images/awards/26.jpg" alt="Award 26">
+        <div class="content"><h3>Lifetime Achievement</h3><p>For lifetime contribution in industry.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <script>
+    const images = document.querySelectorAll(".awards-grid .award");
+
+    // Har ek image ko delay ke sath show karo
+    images.forEach((award, index) => {
+      setTimeout(() => {
+        award.classList.add("show");
+      }, index * 1000); // 800ms gap between each image
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+{% endblock %}
+

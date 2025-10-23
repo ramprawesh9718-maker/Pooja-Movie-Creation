@@ -1,0 +1,288 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mall Branding Advertising</title>
+<style>
+  :root{
+    --blue:#007bff;
+    --dark:#071a2c;
+    --muted:#5a6c7a;
+    --bg:#f6f8fb;
+    font-family:"Poppins",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    background:var(--bg);
+    color:var(--dark);
+  }
+
+  /* HERO SECTION */
+  .hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1556906781-9a412961c28c?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+  }
+
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;bottom:0;
+    background:rgba(0,0,0,0.55);
+  }
+
+  .hero-content{
+    position:relative;
+    color:#fff;
+    max-width:700px;
+    padding:20px;
+  }
+
+  .hero-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
+    line-height:1.1;
+  }
+
+  .hero-content p{
+    font-size:1.1rem;
+    color:#e2e8f0;
+    margin-bottom:20px;
+  }
+
+  .hero-content .btn{
+    background:var(--blue);
+    border:none;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    transition:0.3s ease;
+  }
+
+  .hero-content .btn:hover{
+    background:#0056b3;
+  }
+
+  /* SERVICES */
+  .section{
+    max-width:1100px;
+    margin:60px auto;
+    padding:0 20px;
+  }
+  .section h2{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:2rem;
+  }
+  .section p.lead{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:30px;
+  }
+
+  .services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+  }
+  .card{
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:transform .3s;
+  }
+  .card:hover{transform:translateY(-8px);}
+  .card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  .card-body{
+    padding:15px;
+  }
+  .card-body h3{
+    color:var(--blue);
+    margin-bottom:8px;
+  }
+  .card-body p{
+    color:var(--muted);
+    font-size:0.95rem;
+  }
+
+
+
+/* WHY CHOOSE MALL BRANDING ADVERTISING */
+.why-mall {
+  background: linear-gradient(135deg, #112a5dff, #67779bff);
+  color: #fff;
+  padding: 80px 5%;
+}
+
+.mall-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.mall-image img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mall-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mall-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.mall-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.mall-content ul {
+  list-style: none;
+  margin-bottom: 25px;
+  padding-left: 0;
+}
+
+.mall-content ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background: #ffcc00;
+  color: #001f60;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: #001f60;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mall-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mall-content h2 {
+    font-size: 2rem;
+  }
+
+  .mall-content p {
+    font-size: 1rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Mall Branding & Advertising</h1>
+      <p>Boost your brand visibility inside malls with eye-catching banners, digital screens, and experiential activations.</p>
+      <button class="btn"><a href="mailto:pmc@gmail.com" style="text-decoration:none;">Get Started</a></button>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <p class="lead">High-impact mall advertising formats to engage shoppers effectively.</p>
+
+    <div class="services">
+      <div class="card">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/1de281172018863.Y3JvcCwxNjEzLDEyNjEsMzYzLDE0Nw.jpg" alt="Atrium Branding">
+        <div class="card-body">
+          <h3>Atrium Branding</h3>
+          <p>Large-format atrium banners that make your brand stand out from every floor.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.globaladagency.co.in/images/bas/malladvertising11.jpg" alt="Digital Screens">
+        <div class="card-body">
+          <h3>Digital Screens</h3>
+          <p>High-definition LED screens placed strategically to attract thousands of shoppers daily.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.imsolutions.co/img/imsolution-advertising-in-malls-and-multiplex-infographics.jpg" alt="Pop-up Activation">
+        <div class="card-body">
+          <h3>Pop-up Activations</h3>
+          <p>Interactive brand booths and product experiences that increase customer engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- WHY CHOOSE MALL BRANDING ADVERTISING -->
+<section class="why-mall">
+  <div class="mall-container">
+    <div class="mall-image">
+      <img src="https://resource.buymediaspace.com/wp-content/uploads/2023/06/Mall-Advertising.jpg" alt="Mall Branding Advertising">
+    </div>
+
+    <div class="mall-content">
+      <h2>Why Choose Mall Branding Advertising?</h2>
+      <p>Mall branding advertising helps businesses capture premium audiences in high-traffic shopping environments. With visually 
+      impactful displays and creative placements, your brand stands out to thousands of shoppers daily — increasing visibility, 
+      engagement, and conversions.</p>
+
+      <ul>
+        <li>🏬 Premium audience reach in modern malls</li>
+        <li>🎯 Perfect for lifestyle, fashion, and tech brands</li>
+        <li>💡 Builds brand awareness with visual impact</li>
+        <li>📈 Increases engagement and purchase intent</li>
+      </ul>
+
+      <a href="{% url 'contact' %}" class="btn btn-primary">Promote Your Brand</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
+
+
+{% endblock %}

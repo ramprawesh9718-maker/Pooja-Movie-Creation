@@ -1,0 +1,112 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>About Us</title>
+      <style>
+        .aboutchild1 {
+          width: 90%;
+          margin-left: 90px;
+          display: flex;
+          background-color: #3c3c3c6b;
+          box-shadow: 0px 0px 10px 8px rgb(188 184 181 / 99%);
+        }
+        .aboutchild1 h2 {
+          color: white;
+          text-align: center;
+        }
+        .aboutchild2 {
+          width: 75%;
+          height: 290px;
+          align-items: center;
+          display: flex;
+          background-color: #e6d6d914;
+          box-shadow: 0px 0px 10px 8px rgb(188 184 181 / 99%);
+        }
+        h2 {
+          color: white;
+        }
+        
+        p {
+          color: white;
+          margin: 40px;
+          font-size: 18px;
+        }
+        .aboutus p::before {
+          content: '✓';
+          padding-right: 3px;
+          top: 0;
+          color: #e92807;
+          font-weight: bold;
+        }
+      </style>
+    </head>
+    <body>
+      <br />
+      <section class="aboutus">
+        <div class="aboutchild1">
+          <div class="content">
+            <h2>POOJA SHARMA(Managing Director)</h2>
+
+            <p>Heart of Group ,Pooja Sharma is a big name & face of television industry. She is aActress , Model, Television Anchor & entrepreneur lady.</p> <p>She is a youngest entrepreneur woman who started her journey in very young age. At very young age she worked in TV channels as a Programming Director, CEO, during her era She has given chances to new comers in media , who all are well known TV faces of Media today .</p> <p>After remarkable journey with tv channels she decided to start her own home Production& broadcast Company in 2010. Her in built multiple talent & vision has made grouptoday A big & emerging name In Broadcast industry.</p>
+          </div>
+          <div class="img">
+            <img src="https://poojamoviecreations.com/images/pooja.png" width="400px" height="500px" />
+          </div>
+        </div><br /><br />
+
+        <div class="aboutchild1">
+          <div>
+            <img src="https://poojamoviecreations.com/images/ankur.png" width="400px" height="500px" />
+          </div>
+
+          <div>
+            <h2>ANKUR BANSAL(Group Director)</h2>
+            <p>Core soul of Pooja Movie Creation who develop strategy from behind & business modules programmes.</p>
+            <p>His strong skills of empowering, councellings, motivations helping group & team to grow.</p>
+            <p>He accept all the challenges he face during group growth & development. His broad mind strategy planning creates unique identity in market.</p>
+            <p>More than 15 years experience of media pl0& growth gives new vision to clients. More than 200 Ad films & corporates videos directed by him, he has extra advance knowledge of direction and Ads Shooting.</p>
+            <p>He has given PMC group a unique identity in the broadcast advertising & brand promotion world.</p>
+          </div>
+        </div><br />
+
+        <center>
+          <h1 style="color: blue;">Our Team</h1>
+          <div class="aboutchild2">
+            <div>
+              <h2>Ms Anshika Sharma( Production Head )</h2>
+              <p>I Manage All Productions Related Issues and Never Feel Tired in My Work Because I Enjoy Working With Our Bosses. They Are Good Mentors & Its Really a Good Place to Learn.</p>
+            </div>
+            <div>
+              <img src="https://poojamoviecreations.com/images/2.jpg" />
+            </div>
+          </div><br /><br />
+
+          <div class="aboutchild2">
+            <div>
+              <h2>Mr Rahul Khanna( Creative Dop )</h2>
+              <p>Next Coming Years Would Be Completely Technology Based . So I Believe Through My Skills I Can Bring Emotions in My All Work. So That We Can Satisfy Clients Expectations.</p>
+            </div>
+            <div>
+              <img src="https://poojamoviecreations.com/images/1.jpg" />
+            </div>
+          </div><br /><br />
+
+          <div class="aboutchild2">
+            <div>
+              <h2>Ms Mansi Kapoor( Admin Head )</h2>
+              <p>M So Glad to Work With This Group , Here We Explore Our New Ideas & Creativity.</p>
+            </div>
+            <div style="margin-left: 274px;">
+              <img src="https://poojamoviecreations.com/images/3.jpg" />
+            </div>
+          </div>
+        </center>
+      </section>
+    </body>
+  </html>
+{% endblock %}

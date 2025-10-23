@@ -1,0 +1,369 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Media Advertising</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef4ff;
+      color: #333;
+    }
+
+    /* Hero */
+    .hero {
+      background: url("https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      max-width: 1200px;
+      margin: 50px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.3s;
+      z-index: 10;
+    }
+
+    .carousel button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 15px;
+    }
+
+    .next {
+      right: 15px;
+    }
+
+    /* Cards */
+    .section {
+      max-width: 1300px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #2a5298;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      transform: translateY(-10px);
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+    .card-content p{
+      color: black;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #2a5298;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.2);
+    }
+
+    .gallery-item::after {
+      content: "View More";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(23, 16, 16, 0.6);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta button {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      border: none;
+      padding: 18px 50px;
+      font-size: 1.3rem;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>📰 Print Media Advertising</h1>
+      <p>Newspapers, magazines, brochures, and billboards that leave impact.</p>
+    </div>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel" id="carousel">
+    <div class="slides" id="slides">
+      <img src="https://i.pinimg.com/originals/87/f2/ff/87f2ffd6dbca936a26e173f5aea7b91c.jpg" alt="Newspaper">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8d91d5179465753.64f9e649c8188.jpg">
+      <img src="https://img-aws.ehowcdn.com/877x500p/photos.demandstudios.com/getty/article/190/191/147203192.jpg"
+        alt="Brochure">
+      <img src="https://www.marketing91.com/wp-content/uploads/2020/06/Billboard-advertising.jpg" alt="Billboard">
+      <img src="https://www.marketing91.com/wp-content/uploads/2020/06/Billboard-advertising.jpg" alt="Billboard">
+      <img src="https://img-aws.ehowcdn.com/877x500p/photos.demandstudios.com/getty/article/190/191/147203192.jpg"
+        alt="Brochure">
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+  </div>
+
+  <!-- Cards -->
+  <section class="section">
+    <h2>Our Print Media Services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80"
+          alt="Newspaper">
+        <div class="card-content">
+          <h3>Newspaper Ads</h3>
+          <p>Daily reach with trusted newspaper campaigns.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://elements-resized.envatousercontent.com/elements-video-cover-images/files/450911174/Image_Preview_MagazinePromotionReal.jpg?w=500&cf_fit=cover&q=85&format=auto&s=e35c40e185db55dcd2f43e08929d24d4b7f1a787a537d1dc7dbf7f89b3dee8f6"
+          alt="Magazine">
+        <div class="card-content">
+          <h3>Magazine Promotions</h3>
+          <p>Engage niche readers with magazine visuals.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://online.visual-paradigm.com/repository/images/5f5f2936-8658-4cc3-b8a1-5d2afae9719d/brochures-design/advertisement-team-brochure.png"
+          alt="Brochure">
+        <div class="card-content">
+          <h3>Brochures & Flyers</h3>
+          <p>Creative brochures and flyers for promotions.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=600&q=80"
+          alt="Billboard">
+        <div class="card-content">
+          <h3>Billboards & Posters</h3>
+          <p>High-visibility ads for instant attention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section">
+    <h2>Print Media Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item"><img
+          src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=600&q=80" alt="">
+      </div>
+      <div class="gallery-item"><img
+          src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="">
+      </div>
+      <div class="gallery-item"><img
+          src="https://images.unsplash.com/photo-1522206024047-9c925421675b?auto=format&fit=crop&w=600&q=80" alt="">
+      </div>
+      <div class="gallery-item"><img
+          src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=600&q=80" alt="">
+      </div>
+      <div class="gallery-item"><img
+          src="https://images.unsplash.com/photo-1513569771920-c9e1d31714af?auto=format&fit=crop&w=600&q=80" alt="">
+      </div>
+      <div class="gallery-item"><img
+          src="https://theglobalhues.com/wp-content/uploads/2022/09/How-Is-Print-Advertising-Better-In-The-Digital-Age.jpg"
+          alt=""></div>
+      <div class="gallery-item"><img
+          src="https://pixelborn.net/wp-content/uploads/2025/02/a458672a-78dd-4c72-b6d2-ce65f21e5d1c_91kPC1O01RVZHV7ZOqtWP.jpeg"
+          alt=""></div>
+      <div class="gallery-item"><img src="https://www.finowings.com/admin/media/applicabilty-of-gst.jpeg" alt=""></div>
+      <div class="gallery-item"><img src="https://colorlib.com/wp/wp-content/uploads/sites/2/2_magazine-ad-mockup.jpg"
+          alt=""></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <button>
+      <a href="mailto:pmc@gmail.com" style="text-decoration:none;">Start Your Campaign 📢</a>
+    </button>
+  </div>
+
+
+  <script>
+    let index = 0;
+    const slides = document.getElementById("slides");
+    const totalSlides = slides.children.length;
+    let autoSlide;
+
+    function moveSlide(step) {
+      index = (index + step + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function startAuto() {
+      autoSlide = setInterval(() => moveSlide(1), 3000);
+    }
+    function stopAuto() {
+      clearInterval(autoSlide);
+    }
+
+    const carousel = document.getElementById("carousel");
+    carousel.addEventListener("mouseenter", stopAuto);
+    carousel.addEventListener("mouseleave", startAuto);
+
+    startAuto();
+  </script>
+
+</body>
+
+</html>
+
+{% endblock %}

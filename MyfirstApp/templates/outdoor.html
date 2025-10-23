@@ -1,0 +1,347 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Outdoor Media Advertising</title>
+    <style>
+        :root {
+            --blue1: #0a1d3a;
+            --blue2: #1e3c72;
+            --accent: #ffb020;
+            --muted: #cfd8e3;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--blue1), var(--blue2));
+            color: #fff;
+            line-height: 1.5
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 80vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=1600') center/cover no-repeat;
+            position: relative
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 29, 58, 0.7)
+        }
+
+        .hero>div {
+            position: relative;
+            z-index: 2;
+            max-width: 800px
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 54px);
+            margin-bottom: 16px;
+            color: var(--accent)
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 22px;
+            color: #fff
+        }
+
+        .btn {
+            background: var(--accent);
+            color: var(--blue1);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4)
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px 8vw;
+            text-align: center
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            margin: 8px auto 0;
+            border-radius: 2px
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 28px
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 14px;
+            transition: 0.4s;
+            cursor: pointer;
+            text-align: left
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15)
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 14px
+        }
+
+        .card h3 {
+            color: var(--accent)
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-top: 28px
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.4s;
+            cursor: pointer
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5)
+        }
+
+
+/* WHY CHOOSE OUTDOOR ADVERTISING */
+.why-choose {
+  background: linear-gradient(135deg, #071c3cff, #677798ff);
+  color: #fff;
+  padding: 80px 5%;
+}
+
+.why-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.why-image img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.why-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.why-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.why-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.why-content ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.why-content ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background: #ffcc00;
+  color: #002b80;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: #002b80;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .why-content h2 {
+    font-size: 2rem;
+  }
+  .why-content p {
+    font-size: 1rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div>
+            <h1>We Make Brands Unmissable</h1>
+            <p>Billboards, hoardings, digital displays, and transit advertising — we specialize in multiple categories
+                of outdoor media campaigns tailored for your business.</p>
+            <a href="{% url 'contact' %}" class="btn">Get a Quote</a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=600" alt="Billboard">
+                <h3>Billboards & Hoardings</h3>
+                <p>Strategically placed billboards to grab maximum eyeballs on highways and city centers.</p>
+            </div>
+            <div class="card">
+                <img src="https://michia.com.vn/wp-content/uploads/2019/05/quang-cao-xe-bus-1-1.jpg" alt="Transit Ads">
+                <h3>Transit Advertising</h3>
+                <p>Buses, autos, and metro panels for continuous impressions across city routes.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=600" alt="Airport Digital">
+                <h3>Airport & Metro Displays</h3>
+                <p>Premium advertising for high-value audiences in airports and metro stations.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=600" alt="Mall Branding">
+                <h3>Mall Branding</h3>
+                <p>Indoor banners, kiosks, and digital screens in shopping malls for targeted audiences.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=600" alt="Events Promotion">
+                <h3>Event Promotions</h3>
+                <p>Special event outdoor campaigns to create buzz and excitement instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2>Our Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800" alt="Billboards">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800" alt="Transit">
+            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=800" alt="Airport">
+            <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800" alt="Mall">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800" alt="Events">
+            <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?w=800" alt="Digital Boards">
+
+            <img src="https://brightpixel.in/wp-content/uploads/2023/10/008.jpg" alt="Mall">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.HO7WGzgTxHLZZ0woR6SaBwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Mall">
+            <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800" alt="Mall">
+        </div>
+    </section>
+
+
+
+    <!-- WHY CHOOSE OUTDOOR ADVERTISING -->
+<section class="why-choose">
+  <div class="why-container">
+    <div class="why-image">
+      <img src="https://leadsdubai.com/wp-content/uploads/outdoor-advertising.jpeg" alt="Outdoor Advertising Billboard">
+    </div>
+    <div class="why-content">
+      <h2>Why Choose Outdoor Advertising?</h2>
+      <p>Outdoor advertising is one of the most effective and impactful marketing channels to reach a massive audience every single day. Whether it’s billboards, hoardings, or transit ads — outdoor media captures attention instantly and builds long-lasting brand recall.</p>
+
+      <ul>
+        <li>✅ Wide visibility & strong brand presence</li>
+        <li>✅ Continuous exposure 24/7</li>
+        <li>✅ Highly customizable & creative designs</li>
+        <li>✅ Perfect for both local and national campaigns</li>
+      </ul>
+
+      <a href="{% url 'contact' %}" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+    {% comment %} <script>
+        function submitForm(e) {
+            e.preventDefault();
+            document.getElementById('successMsg').style.display = 'block';
+            setTimeout(() => { document.getElementById('successMsg').style.display = 'none' }, 30000);
+            document.getElementById('contactForm').reset();
+        }
+    </script> {% endcomment %}
+</body>
+
+</html>
+
+{% endblock %}

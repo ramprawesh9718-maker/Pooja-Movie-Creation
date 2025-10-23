@@ -1,0 +1,192 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL Advertising 2025</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      color: #fff;
+      background-color: #000;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://crictrends.in/wp-content/uploads/2024/10/IPL-2025-Points-Table-768x433.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #ffd700;
+      text-shadow: 0 0 15px #000;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #fff;
+      max-width: 600px;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    .hero a {
+      background: #ff3d00;
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero a:hover {
+      background: #ff7300;
+      transform: scale(1.05);
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      background: #0a0a0a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      color: #ffd700;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .service-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service {
+      background: #111;
+      padding: 25px;
+      border-radius: 10px;
+      transition: 0.4s;
+      border: 1px solid #222;
+    }
+
+    .service:hover {
+      background: #1c1c1c;
+      transform: translateY(-8px);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+
+    .service img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      color: #ffcc00;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>IPL Advertising 2025</h1>
+    <p>Promote your brand on the biggest cricket stage! Get visibility across TV, stadiums, and digital platforms during the IPL season.</p>
+    <a href="mailto:pmc@gmail.com">Advertise Now</a>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services">
+    <h2>Our Advertising Services</h2>
+    <div class="service-container">
+
+      <div class="service">
+        <img src="https://the-media-ant.mo.cloudinary.net/referenceArtworks/1662988092422/Digital%20Sight%20Screen%20Package_logo.png" alt="Stadium Ads">
+        <h3>Stadium Branding</h3>
+        <p>Display your brand on LED boards, player jerseys, and dugout areas during live IPL matches watched by millions.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.DJt5J-ACGQwgHISZ8tyK3QAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="TV Advertising">
+        <h3>Television Advertising</h3>
+        <p>Reach audiences across India with IPL TV commercials on Star Sports, JioCinema, and digital streaming platforms.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.HW0VsH-u700YwtrHLRmnUAHaD4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Digital Ads">
+        <h3>Digital Advertising</h3>
+        <p>Engage fans online through IPL-related social campaigns, influencer marketing, and YouTube ads.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://sportsmintmedia.com/wp-content/uploads/2021/04/IPL-2021_-Major-Sponsors-this-Season.jpg" alt="Team Sponsorship">
+        <h3>Team Sponsorships</h3>
+        <p>Be part of the IPL franchise ecosystem by becoming an official partner or sponsor of your favorite team.</p>
+      </div>
+
+      <div class="service">
+        <img src="{% static 'uploads/home/dress.png' %}" alt="IPL Dress">
+        <h3>IPL Dress</h3>
+        <p>Be part of the IPL franchise ecosystem by becoming an official partner or sponsor of your favorite team.</p>
+      </div>
+
+      <div class="service">
+        <img src="{% static 'uploads/home/iplad.png' %}" alt="Team Sponsorship">
+        <h3>IPL Add</h3>
+        <p>Be part of the IPL franchise ecosystem by becoming an official partner or sponsor of your favorite team.</p>
+      </div>
+
+      <div class="service">
+        <img src="{% static 'uploads/home/VRIPL.webp' %}" alt="Team Sponsorship">
+        <h3>Team Sponsorships</h3>
+        <p>Be part of the IPL franchise ecosystem by becoming an official partner or sponsor of your favorite team.</p>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
+
+{% endblock %}

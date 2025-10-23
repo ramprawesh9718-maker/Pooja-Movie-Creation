@@ -1,0 +1,212 @@
+ {% load static %}
+
+
+ <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja Movies Creations</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(150deg, rgb(28 45 106 / 96%) 0%, rgb(0 6 10));
+      padding-top:70px; /* navbar ke liye space */
+    }
+
+    /* Navbar main */
+    nav{
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      z-index:1000;
+      background:linear-gradient(90deg, #003366 35%, #0b74da 65%);
+      box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .navbar{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 20px;
+    }
+
+    /* Logo */
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:white;
+      font-size:20px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .logo img{
+      height:40px;
+      width:40px;
+      border-radius:10%;
+    }
+
+    /* Navbar links */
+    .navbar ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      gap:20px;
+    }
+
+    .navbar ul li{
+      position:relative;
+    }
+
+    .navbar ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:8px;
+      transition:all 0.25s ease;
+    }
+    .active a{
+      background: #10ec82f9
+    }
+    .active1 a{
+      background: #10ec82f9
+    }
+
+    .navbar ul li a:hover{
+      background:rgba(255,255,255,0.18);
+      transform:translateY(-2px);
+    }
+
+    .navbar ul li i{
+      font-size:16px;
+    }
+
+    /* Dropdown menu */
+    .navbar ul li ul.dropdown{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:white;
+      min-width:170px;
+      border-radius:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      padding:8px 0;
+      z-index:99;
+    }
+
+    .navbar ul li ul.dropdown li a{
+      color:#0b74da;
+      font-weight:500;
+      padding:10px 14px;
+      border-radius:0;
+      background:transparent;
+    }
+
+    .navbar ul li ul.dropdown li a:hover{
+      background:#f1f5fa;
+      transform:none;
+    }
+
+    .navbar ul li:hover ul.dropdown{
+      display:block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Responsive */
+    @media(max-width:900px){
+
+      .navbar{
+        flex-direction:column;
+        align-items:flex-start; 
+      }
+      .navbar ul{
+        flex-direction:column;
+        width:100%;
+        gap:0;
+      }
+      .navbar ul li a{
+        width:100%;
+        padding:12px 20px;
+      }
+      .navbar ul li ul.dropdown{
+        position:relative;
+        box-shadow:none;
+        border-radius:0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar">
+      
+      <!-- Left Logo -->
+      <a href="#" class="logo">
+        <img src="{% static 'logo5remove.png' %}" alt="Logo">
+        Pooja Movies Creations
+      </a>
+
+
+
+
+       
+
+      <!-- Right Menu -->
+      <ul>
+        {% comment %} {{request.path}} {% endcomment %}
+        <li class="{% if request.path == '/' %} active {% endif %}"><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="{% if request.path == '/service' %} active {% endif %}"><a href="{% url 'service' %}"><i class="fa-solid fa-gear"></i> Service</a></li>
+        <li class="{% if request.path == '/ourclient' %} active {% endif %}"><a href="{% url 'ourclient' %}"><i class="fa-solid fa-handshake"></i> Our Client</a></li>
+        <li class="{% if request.path == '/award' %} active {% endif %}"><a href="{% url 'award' %}"><i class="fa-solid fa-award"></i> Award</a></li>
+        
+        <!-- About Us with Dropdown -->
+        <li class="dropdown {% if request.resolver_match.url_name in 'team about' %} active {% endif %}">
+          <a href="#"><i class="fa-solid fa-circle-info"></i> About Us <i class="fa-solid fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="{% url 'team' %}"><i class="fa-solid fa-users"></i> Our Team</a></li>
+            <li><a href="{% url 'about' %}"><i class="fa-solid fa-briefcase"></i> Our Mission</a></li>
+          </ul>
+        </li>
+
+        <li class="{% if request.path == '/contact' %} active {% endif %}"><a href="{% url 'contact' %}"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+        
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+
+</body>
+</html>
+
+
+{% comment %} {% block body %}
+{% endblock %} {% endcomment %}

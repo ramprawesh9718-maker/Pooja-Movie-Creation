@@ -1,0 +1,121 @@
+{% extends 'whatsApp.html' %}
+{% load static %}
+{% block content %}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beautiful Fullscreen Gallery</title>
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#0f1724;color:#fff;}
+    .wrap{max-width:1400px;margin:auto;padding:20px;}
+    h1{text-align:center;margin-bottom:20px;}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+    .card{position:relative;overflow:hidden;border-radius:14px;cursor:pointer;transition:transform .3s, box-shadow .3s;}
+    .card:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(0,0,0,0.6);}    
+    .card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .6s ease;}
+    .card:hover img{transform:scale(1.2) rotate(-1.5deg);}    
+
+    .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s;}
+    .card:hover .overlay{opacity:1;}
+    .overlay span{background:#7c3aed;color:#fff;padding:8px 16px;border-radius:20px;font-weight:bold;box-shadow:0 4px 10px rgba(0,0,0,0.4);}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.95);z-index:1000;flex-direction:column;}
+    .lightbox.open{display:flex;}
+    .lightbox img{max-width:95%;max-height:90vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.9);}
+    .controls{margin-top:20px;display:flex;gap:15px;}
+    .btn{padding:12px 20px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;}
+    .btn.download{background:#16a34a;color:#fff;}
+    .btn.back{background:#dc2626;color:#fff;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🌌 Stunning Gallery</h1>
+
+    <!-- Gallery Grid -->
+    <div class="grid" id="gallery"></div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightImg" src="" alt="">
+    <div class="controls">
+      <a id="downloadBtn" class="btn download" download>Download</a>
+      <button class="btn back" onclick="closeLightbox()">Back</button>
+    </div>
+  </div>
+
+  <script>
+    const data = [
+      {title:'Aurora Peaks', src:"{% static 'uploads/gallery/gl1.jpeg' %}"},
+      {title:'Misty Forest', src:"{% static 'uploads/gallery/gl2.jpeg' %}"},
+      {title:'City Lights', src:"{% static 'uploads/gallery/gl3.jpeg' %}"},
+      {title:'Desert Dunes', src:"{% static 'uploads/gallery/gl4.jpeg' %}"},
+      {title:'Ocean View', src:"{% static 'uploads/gallery/gl5.jpeg' %}"},
+      {title:'Lavender Field', src:"{% static 'uploads/gallery/gl6.jpeg' %}"},
+      {title:'Snow Ridge', src:"{% static 'uploads/gallery/gl7.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl8.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl9.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl10.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl11.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl12.jpeg' %}"},
+      {src:"{% static 'uploads/gallery/gl13.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl14.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl15.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl16.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl17.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl18.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl19.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/gallery/gl20.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/celebrities/clbty1.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/celebrities/clbty2.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/celebrities/clbty3.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/celebrities/clbty4.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/awards/aw4.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/awards/aw5.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/awards/aw2.jpeg' %}"},
+      {title:'Golden Hour', src:"{% static 'uploads/awards/aw3.jpeg' %}"}
+    ];
+
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightImg = document.getElementById('lightImg');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    function renderGallery(){
+      gallery.innerHTML = '';
+      data.forEach((item)=>{
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<img src="${item.src}" alt="${item.title}">
+                          <div class='overlay'><span>View</span></div>`;
+        card.querySelector('.overlay').addEventListener('click', (e)=>{
+          e.stopPropagation();
+          openLightbox(item.src);
+        });
+        gallery.appendChild(card);
+      });
+    }
+
+    function openLightbox(src){
+      lightImg.src = src;
+      downloadBtn.href = src;
+      lightbox.classList.add('open');
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+    }
+
+    renderGallery();
+  </script>
+</body>
+</html>
+
+{% endblock %}
+
